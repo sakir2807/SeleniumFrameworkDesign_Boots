@@ -25,7 +25,7 @@ Feature: Boots homepage
     And clicked on I want to work for boot
     Then Sign in option displayed
     And user redirected to different page
-    And close browser after execution
+
 
   Scenario: Verify Search Now filters on Home page
     Then Search jobs field is displayed
@@ -37,7 +37,7 @@ Feature: Boots homepage
     Then assert URL contains text 'SearchJobsUrl.key'
     And basic filter are displayed
     And advanced filter are displayed
-    And close browser after execution
+
 
   Scenario: Verify career area filter present on homepage
     Then Career area filters are displayed
@@ -49,15 +49,14 @@ Feature: Boots homepage
     Then stories as per category displayed
     When user click on View stories CTA
     Then assert URL contains text 'StoryPageUrl.key'
-    And close browser after execution
+
 
 
   Scenario: Verify Stories displayed on home page
     And user selected category from Career area dropdown
     When click on one story
     Then Redirected to Story page then Image and Description displayed
-    And close browser after execution
-    And close browser after execution
+
 
 
   Scenario: Verify Jobs that might interest you on home page
@@ -66,7 +65,7 @@ Feature: Boots homepage
     Then Category name and Job role and Location displayed
     When user click on Find out more CTA
     Then redirected to Story page and story description displayed
-    And close browser after execution
+
 
 
   Scenario: Verify Why boots with explore more CTA
@@ -75,7 +74,7 @@ Feature: Boots homepage
     Then Explore more CTA displayed
     When user click on Explore more CTA
     Then assert URL contains text 'WhyBootsUrl.key'
-    And close browser after execution
+
 
 
   Scenario: Verify FAQs on Home page
@@ -84,14 +83,14 @@ Feature: Boots homepage
     Then accordion should expand
     When User click on Expanded accordion
     Then Accordion get collapsed
-    And close browser after execution
+
 
 
   Scenario: Verify View All FAQs CTA on Home page
     Then View all FAQs CTA displayed
     When click on View all FAQs CTA
     Then assert URL contains text 'FAQSPageUrl.key'
-    And close browser after execution
+
 
 
   Scenario: Verify Social media icons on Boots home page
@@ -104,7 +103,6 @@ Feature: Boots homepage
     Then assert URL open in different tabs contains text 'TwitterUrl.key'
     When user click on LinkedIn Icon
     Then assert URL open in different tabs contains text 'LinkedInUrl.key'
-    And close browser after execution
 
 
   Scenario: Verify Instagram stories on Home page
@@ -113,7 +111,7 @@ Feature: Boots homepage
     Then Text displayed with like and comment CTA
     When Click on story
     Then assert URL open in different tabs contains text 'InstagramStoryUrl.key'
-    And close browser after execution
+
 
 
   Scenario: Verify Footer on home page
@@ -127,7 +125,7 @@ Feature: Boots homepage
     Then Footer is displayed
     When user click on FAQs footer
     Then assert URL contains text 'FAQSPageUrl.key'
-    And close browser after execution
+
 
 
  Scenario: Verify Sub footer at home page
@@ -154,7 +152,7 @@ Feature: Boots homepage
     Then assert URL open in different tabs contains text 'InstagramUrl.key'
     When user click on LinkedIn Icon footer
     Then assert URL open in different tabs contains text 'LinkedInUrl.key'
-   And close browser after execution
+
 
 
   Scenario: Verify Sub footer at careers at boots
@@ -183,4 +181,3 @@ Feature: Boots homepage
     When click and verify career at boots from footer
     When user click on Airports Jobs
     Then assert URL contains text 'AirportsJobPageUrl.key'
-    And close browser after execution
