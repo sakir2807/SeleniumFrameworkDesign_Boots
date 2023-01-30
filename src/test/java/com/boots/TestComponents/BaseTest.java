@@ -65,7 +65,7 @@ public class BaseTest {
 			options.addArguments("headless");
 			}	*/
 			driver = new ChromeDriver(options);
-			driver.manage().window().setSize(new Dimension(1440,900));//full screen
+			//driver.manage().window().setSize(new Dimension(1440,900));//full screen
 
 		/*} else if (browserName.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver",
@@ -361,5 +361,14 @@ public class BaseTest {
 				LOG.info("IMAGE : " + image.getAttribute("alt"));
 			}
 		}
+	}
+
+	protected boolean isElementClickable(By by) {
+		try {
+			new WebDriverWait(driver, DRIVER_WAIT_TIME).until(ExpectedConditions.elementToBeClickable(by));
+		} catch (TimeoutException exception) {
+			return false;
+		}
+		return true;
 	}
 }

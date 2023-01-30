@@ -17,8 +17,10 @@ public class Listeners extends BaseTest implements ITestListener{
 	ExtentReports extent = ExtentReporterNG.getReportObject();
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); //Thread safe
 
-	public Listeners() throws IOException {
-	}
+	/*public Listeners(WebDriver driver) {
+		super(driver);
+	}*/
+
 
 	@Override
 	public void onTestStart(ITestResult result) {

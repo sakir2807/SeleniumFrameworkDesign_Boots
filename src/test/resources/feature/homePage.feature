@@ -7,7 +7,7 @@ Feature: Boots homepage
 
   Scenario: Verify Header links on home page
     And headers are displayed
-    When user click on Logo icon
+    When Click on Boots Logo
     Then Page get refreshed and home page displayed
     When user click on Home option on header
     Then Page get refreshed and home page displayed
