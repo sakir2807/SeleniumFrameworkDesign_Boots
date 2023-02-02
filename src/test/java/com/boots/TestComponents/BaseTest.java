@@ -310,6 +310,18 @@ public class BaseTest {
 		ProductDropDown.selectByIndex(index);
 	}
 
+	public void selectValueFromDropDownByValue(String value, By by) {
+		Select ProductDropDown;
+		try {
+			ProductDropDown = new Select(waitForExpectedElement(by, 20));
+		}
+		catch(WebDriverException e){
+			ProductDropDown = new Select(driver.findElement(by));
+		}
+		ProductDropDown.selectByValue(value);
+	}
+
+
 
 
 	public boolean checkPageTitle(String title) {

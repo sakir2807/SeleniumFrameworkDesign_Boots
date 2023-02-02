@@ -159,7 +159,7 @@ public class HomePageSteps extends BaseTest {
     private static final By WHY_BOOTS_REWARDS_BENEFIT = By.cssSelector("#why-boots-nav > div > ul > li:nth-child(5) > a");
     private static final By OUR_SUPPORT_OFFICE_AREA = By.cssSelector("div.wp-block-group.bg-logo-light > div > section:nth-child(4) > div");
     private static final By OUR_SUPPORT_OFFICE_VIDEO = By.cssSelector("div.slick-slide.slick-current.slick-active div > div.image-wrapper > a");
-    private static final By OUR_SUPPORT_OFFICE_VIDEO_SCREEN = By.cssSelector("div.mfp-wrap.mfp-close-btn-in.mfp-auto-cursor.mfp-fade.mfp-ready > div > div.mfp-content");
+    private static final By OPEN_VIDEO_SCREEN = By.cssSelector("div.mfp-wrap.mfp-close-btn-in.mfp-auto-cursor.mfp-fade.mfp-ready > div > div.mfp-content");
     private static final By VIEW_BENEFIT_CTA = By.cssSelector("div > section:nth-child(3) div.section-slider-widget.slick-initialized.slick-slider div.content-wrapper > p:nth-child(3) > a");
     private static final By BENEFIT_ICON = By.cssSelector("#rewards-popup div:nth-child(1) > div:nth-child(1) > div > div >img");
     private static final By BENEFIT_TITLE = By.cssSelector("#rewards-popup div:nth-child(1) > div:nth-child(1) > div > h3");
@@ -170,6 +170,31 @@ public class HomePageSteps extends BaseTest {
     private static final By VIDEO_SCREEN = By.cssSelector("#movie_player");
     private static final By CAREER_STORIES = By.cssSelector("div.wp-block-group.bg-logo-light > div > div.wp-block-group");
     private static final By CAREER_STORIES_RIGHT_BUTTON = By.cssSelector("button.slick-next.slick-arrow");
+    private static final By LEARNING_AND_DEVELOPMENT_AREA = By.cssSelector("div.wp-block-group.bg-logo-light > div > section.programmes-container");
+    private static final By PHARMACY_LD = By.cssSelector("div.programmes-navigation-wrapper > div.programme.active");
+    private static final By PHARMACY_LD_DESCRIPTION = By.cssSelector("div.programmes-navigation-wrapper > div.programme.active > div.introduction");
+    private static final By RETAILS_LD = By.cssSelector("div.programmes-navigation-wrapper > div:nth-child(2)");
+    private static final By RETAILS_LD_DESCRIPTION = By.cssSelector("div.programmes-navigation-wrapper > div.programme.active > div.introduction");
+    private static final By SUPPORT_SUPPLIER_LD = By.cssSelector("div.programmes-navigation-wrapper > div:nth-child(3)");
+    private static final By SUPPORT_SUPPLIER_LD_DESCRIPTION = By.cssSelector("div.programmes-navigation-wrapper > div.programme.active > div.introduction");
+    private static final By OPTICIAN_LD = By.cssSelector("div.programmes-navigation-wrapper > div:nth-child(4)");
+    private static final By OPTICIAN_LD_DESCRIPTION = By.cssSelector("div.programmes-navigation-wrapper > div.programme.active > div.introduction");
+    private static final By LEADERSHIP_LD = By.cssSelector("div.programmes-navigation-wrapper > div:nth-child(5)");
+    private static final By LEADERSHIP_LD_DESCRIPTION = By.cssSelector("div.programmes-navigation-wrapper > div.programme.active > div.introduction");
+    private static final By BEAUTY_LD = By.cssSelector("div.programmes-navigation-wrapper > div:nth-child(6)");
+    private static final By BEAUTY_LD_DESCRIPTION = By.cssSelector("div.programmes-navigation-wrapper > div.programme.active > div.introduction");
+    private static final By WHY_BOOTS_BANNER = By.cssSelector(".swiper-wrapper > section >div >div.content-wrapper");
+    private static final By WHY_BOOTS_SCROLL_DOWN_CTA = By.cssSelector("div.wp-block-columns.swiper-container.vertical-slides > button");
+    private static final By WHY_BOOTS_BULLET_NAVIGATOR = By.cssSelector("div.wp-block-columns.swiper-container.vertical-slides > div.swiper-pagination.vertical-pagination.swiper-pagination-clickable.swiper-pagination-bullets");
+    private static final By WHY_BOOTS_BULLET_NAVIGATOR_SECOND_OPTION = By.cssSelector("div.wp-block-columns.swiper-container > div.swiper-pagination.vertical-pagination > span:nth-child(2)");
+    private static final By WHY_BOOTS_BULLET_NAVIGATOR_SECOND_OPTION_IMAGE = By.cssSelector("section:nth-child(2) div.image-wrapper > div.image-block.floating-img-right-bottom.mouse-move-animate");
+    private static final By WHY_BOOTS_THIRD_BANNER_FIND_MORE_CTA = By.cssSelector("section:nth-child(3)> div > div.content-wrapper > div > a");
+
+
+
+
+//Our_Stories selector
+
     private static final By CAREER_STORIES_LEFT_BUTTON = By.cssSelector("button.slick-prev.slick-arrow");
     private static final By SO_HOW_DO_WE_DO_IT = By.cssSelector("div.wp-block-group.bg-logo-light > div > div.wp-block-group");
     private static final By OUR_JOURNEY_CARE = By.cssSelector("section:nth-child(3) > div > div div.section-slider-widget.slick-initialized.slick-slider div.image-wrapper > a");
@@ -193,6 +218,43 @@ public class HomePageSteps extends BaseTest {
     private static final By RETAIL_STORY = By.cssSelector("div.blog-feed.rel > div.category-filter > div > div.category-wrapper > a:nth-child(8)");
     private static final By SUPPLY_CHAIN_STORY = By.cssSelector("div.blog-feed.rel > div.category-filter > div > div.category-wrapper > a:nth-child(9)");
     private static final By SUPPORT_OFFICE_STORY = By.cssSelector("div.blog-feed.rel > div.category-filter > div > div.category-wrapper > a:nth-child(10)");
+    private static final By BACK_TOP_CTA_OUR_STORIES = By.cssSelector("#content > section > div.scroll-to-top)");
+    private static final By OUR_STORIES_TOP_POINT = By.cssSelector("div.blog-feed.rel > div.container > h1)");
+    private static final By SEARCH_CTA_STORY = By.cssSelector("#search-wrapper > div > form > button");
+    private static final By SEARCH_JOB_LOCATION_STORY = By.cssSelector("#search-text");
+
+    //Selector for CareerAreas
+    private static final By CURRENT_VACANCIES_RETAIL = By.cssSelector("section.navigation-header.row > div.career-head-wrapper > div > div > a");
+    private static final By SHARE_PAGE_RETAIL = By.cssSelector("section.navigation-header.row > div.career-head-wrapper > div  button");
+    private static final By SHARE_PAGE_DROPDOWN_RETAIL = By.cssSelector("sharethis-inline-share-buttons st-center st-has-labels");
+    private static final By No7_BEAUTY_COMPANY_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(11) > a");
+    private static final By WALGREENS_BOOTS_ALLIANCE_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(10) > a");
+    private static final By HEARING_CARE_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(9) > a");
+    private static final By EARLY_CAREERS_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(7) > a");
+    private static final By WORK_EXPERIENCE_CAREERAREAS = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(3) > a");
+    private static final By SPEAKER_FOR_SCHOOL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li > a");
+    private static final By VIDEO_SCREEN_POPUP = By.cssSelector("popup-youtube");
+    private static final By OPTICIAN_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(4) > a");
+    private static final By SUPPORT_OFFICE_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(3) > a");
+    private static final By PHARMACY_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(2) > a");
+    private static final By RETAILS_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(1) > a");
+    private static final By No7_RETAIL = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(4) > a");
+    private static final By PHARMACIST_PHARMACY = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(1) > a");
+    private static final By PHARMACIST_NEWLY_PHARMACY = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(2) > a");
+    private static final By PHARMACY_SUPPORT_PHARMACY = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(3) > a");
+    private static final By TRAINEE_PHARMACIST_PHARMACY = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(4) > a");
+    private static final By PHARMACY_STORE_PHARMACY = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(5) > a");
+    private static final By LOCUM_PHARMACIST_PHARMACY = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(6) > a");
+    private static final By DISCOVER_PATH_BANNER = By.cssSelector("section.career-block-image div.content-wrapper > p");
+    private static final By DISCOVER_PATH_CTA = By.cssSelector("section.career-block-image div.content-wrapper > button");
+    private static final By BOOTS_CAREERS_TAKE_YOU = By.cssSelector("#career-mapper > div.start-overlay");
+    private static final By CULTURE_TRAINEE_PHARMACIST = By.cssSelector("#our-culture >div");
+    private static final By STORIES_TRAINEE_PHARMACIST = By.cssSelector("#trainee-pharmacist-stories");
+    private static final By VIEW_STORIES_TRAINEE_PHARMACIST = By.cssSelector("#trainee-pharmacist-stories div > div.pill-controlled-slider >div div:nth-child(2) div.common-slider-para > a.hub-button");
+    private static final By HOW_TO_APPLY_SLIDER = By.cssSelector("div.our-application-slider > div.application-nav.test.slick-initialized.slick-slider");
+    private static final By HOW_TO_APPLY_SLIDER_OPTION = By.cssSelector("div.application-nav.test.slick-initialized.slick-slider > div > div > div:nth-child(2) > div > button");
+    private static final By HOW_TO_APPLY_DETAILS = By.cssSelector("div.slick-slide.slick-current.slick-active div.slide-left > div");
+    private static final By PHARMACY_PROGRAMMES = By.cssSelector("#our-pharmacy-programmes");
 
 
 
@@ -1027,8 +1089,8 @@ public class HomePageSteps extends BaseTest {
 
     @Then("video should be played")
     public void videoShouldBePlayed() {
-        waitForExpectedElement(OUR_SUPPORT_OFFICE_VIDEO_SCREEN);
-        assertTrue(isElementDisplayedBySeconds(OUR_SUPPORT_OFFICE_VIDEO_SCREEN,5));
+        waitForExpectedElement(OPEN_VIDEO_SCREEN);
+        assertTrue(isElementDisplayedBySeconds(OPEN_VIDEO_SCREEN,5));
 
     }
 
@@ -1155,6 +1217,109 @@ public class HomePageSteps extends BaseTest {
          urlContainsText("stories");
     }
 
+    @And("Learning & development displayed")
+    public void learningDevelopmentDisplayed() {
+        scrollToElement(LEARNING_AND_DEVELOPMENT_AREA);
+        assertTrue(isElementDisplayedBySeconds(LEARNING_AND_DEVELOPMENT_AREA,5));
+    }
+
+
+    @When("user click on Pharmacy CTA")
+    public void userClickOnPharmacyCTA() {
+        clickByElementByQueryJSExecutor(PHARMACY_LD);
+    }
+
+    @Then("Pharmacy details displayed")
+    public void pharmacyDetailsDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(PHARMACY_LD_DESCRIPTION,5));
+    }
+
+    @When("user click on Retails CTA")
+    public void userClickOnRetailsCTA() {
+        clickByElementByQueryJSExecutor(RETAILS_LD);
+    }
+
+    @Then("Retails details displayed")
+    public void retailsDetailsDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(RETAILS_LD_DESCRIPTION,5));
+    }
+
+    @When("User click on Support office and supplier chain CTA")
+    public void userClickOnSupportOfficeAndSupplierChainCTA() {
+        clickByElementByQueryJSExecutor(SUPPORT_SUPPLIER_LD);
+    }
+
+    @Then("Support office and supplier chain details displayed")
+    public void supportOfficeAndSupplierChainDetailsDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(SUPPORT_SUPPLIER_LD_DESCRIPTION,5));
+    }
+
+    @When("user click on Opticians CTA")
+    public void userClickOnOpticiansCTA() {
+        clickByElementByQueryJSExecutor(OPTICIAN_LD);
+    }
+
+    @Then("Opticians details displayed")
+    public void opticiansDetailsDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(OPTICIAN_LD_DESCRIPTION,5));
+    }
+
+    @When("user click on Leadership CTA")
+    public void userClickOnLeadershipCTA() {
+        clickByElementByQueryJSExecutor(LEADERSHIP_LD);
+    }
+
+    @Then("Leadership details displayed")
+    public void leadershipDetailsDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(LEADERSHIP_LD_DESCRIPTION,5));
+    }
+
+    @When("user click on Beauty CTA")
+    public void userClickOnBeautyCTA() {
+        clickByElementByQueryJSExecutor(BEAUTY_LD);
+    }
+
+    @Then("Beauty details displayed")
+    public void beautyDetailsDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(BEAUTY_LD_DESCRIPTION,5));
+    }
+
+    @And("banner image is getting displayed")
+    public void bannerImageIsGettingDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(WHY_BOOTS_BANNER,5));
+    }
+
+    @And("Scroll down CTA displayed")
+    public void scrollDownCTADisplayed() {
+        assertTrue(isElementDisplayedBySeconds(WHY_BOOTS_SCROLL_DOWN_CTA,5));
+    }
+
+    @And("bullet navigation on side displayed")
+    public void bulletNavigationOnSideDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(WHY_BOOTS_BULLET_NAVIGATOR,5));
+    }
+
+    @When("user click on bullet navigation button")
+    public void userClickOnBulletNavigationButton() {
+        clickByElementByQueryJSExecutor(WHY_BOOTS_BULLET_NAVIGATOR_SECOND_OPTION);
+    }
+
+    @Then("Banner image changed")
+    public void bannerImageChanged() {
+        assertTrue(isElementDisplayedBySeconds(WHY_BOOTS_BULLET_NAVIGATOR_SECOND_OPTION_IMAGE,5));
+    }
+
+    @When("user click scroll down")
+    public void userClickScrollDown() {
+        clickByElementByQueryJSExecutor(WHY_BOOTS_SCROLL_DOWN_CTA);
+    }
+
+    @When("user click on Find out more")
+    public void userClickOnFindOutMore() {
+        clickByElementByQueryJSExecutor(WHY_BOOTS_THIRD_BANNER_FIND_MORE_CTA);
+    }
+
+
      /* -------------------------------------------------------------------------------------
     OurStoriesStepDefination start from here
     -------------------------------------------------------------------------------------   */
@@ -1255,5 +1420,261 @@ public class HomePageSteps extends BaseTest {
     public void userClickOnSupportOffice() {
         clickByElementByQueryJSExecutor(SUPPORT_OFFICE_STORY);
     }
+
+    @When("user Scroll down")
+    public void userScrollDown() {
+        scrollToPageBottom();
+    }
+
+    @Then("Back to top CTA displayed")
+    public void backToTopCTADisplayed() {
+        assertTrue(isElementDisplayedBySeconds(BACK_TOP_CTA_OUR_STORIES,5));
+    }
+
+    @When("user click on Back to top CTA")
+    public void userClickOnBackToTopCTA() {
+        clickByElementByQueryJSExecutor(BACK_TOP_CTA_OUR_STORIES);
+    }
+
+    @Then("User is redirected to top of the page")
+    public void userIsRedirectedToTopOfThePage() {
+        assertTrue(isElementDisplayedBySeconds(OUR_STORIES_TOP_POINT,5));
+    }
+
+    @And("Search CTA displayed on story")
+    public void searchCTADisplayedOnStory() {
+        scrollToElement(SEARCH_CTA_STORY);
+        assertTrue(isElementDisplayedBySeconds(SEARCH_CTA_STORY,5));
+    }
+
+    @When("user enters keyword or Town")
+    public void userEntersKeywordOrTown() {
+        enterDataAndWait(SEARCH_JOB_LOCATION_STORY,"London");
+        waitForAjaxElementNotToBePresent(driver,4);
+    }
+
+    @And("Click on Search CTA")
+    public void clickOnSearchCTA() {
+        clickByElementByQueryJSExecutor(SEARCH_CTA_STORY);
+    }
+
+    @And("User redirected to search page")
+    public void userRedirectedToSearchPage() {
+
+    }
+
+/* --------------------------------------------------------------------------------------------
+ CareerAreaStepDefination
+ --------------------------------------------------------------------------------------------*/
+
+
+    @And("User is on Retail page")
+    public void userIsOnRetailPage() {
+        userHoverOnCareerAreas();
+        clickByElementByQueryJSExecutor(RETAILS_CAREERAREAS);
+    }
+
+    @And("Current Vacancies displayed")
+    public void currentVacanciesDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(CURRENT_VACANCIES_RETAIL,5));
+    }
+
+    @And("Share page dropdown displayed")
+    public void sharePageDropdownDisplayed() {
+        hoverOnElement(SHARE_PAGE_RETAIL);
+        assertTrue(isElementDisplayedBySeconds(SHARE_PAGE_DROPDOWN_RETAIL,5));
+    }
+
+    @When("user click on Current Vacancies CTA")
+    public void userClickOnCurrentVacanciesCTA() {
+        clickByElementByQueryJSExecutor(CURRENT_VACANCIES_RETAIL);
+    }
+
+    @When("user click on Customer advisor option")
+    public void userClickOnCustomerAdvisorOption() {
+        selectValueFromDropDownByValue("Retail",CAREER_AREAS_HEADER);
+        waitForAjaxElementNotToBePresent(driver,5);
+    }
+
+    @When("user click on NoSeven beauty company link")
+    public void userClickOnNoBeautyCompanyLink() {
+        userHoverOnCareerAreas();
+        clickByElementByQueryJSExecutor(No7_BEAUTY_COMPANY_CAREERAREAS);
+    }
+
+    @When("user click on Walgreens Boots Alliance link")
+    public void userClickOnWalgreensBootsAllianceLink() {
+        userHoverOnCareerAreas();
+        clickByElementByQueryJSExecutor(WALGREENS_BOOTS_ALLIANCE_CAREERAREAS);
+    }
+
+    @When("user click on Hearing care link")
+    public void userClickOnHearingCareLink() {
+        userHoverOnCareerAreas();
+        clickByElementByQueryJSExecutor(HEARING_CARE_CAREERAREAS);
+    }
+
+    @And("User is on Early Careers page")
+    public void userIsOnEarlyCareersPage() {
+        userHoverOnCareerAreas();
+        clickByElementByQueryJSExecutor(EARLY_CAREERS_CAREERAREAS);
+    }
+
+    @And("User is on Work Experience page")
+    public void userIsOnWorkExperiencePage() {
+        clickByElementByQueryJSExecutor(WORK_EXPERIENCE_CAREERAREAS);
+    }
+
+    @And("Speakers for Schools CTA displayed")
+    public void speakersForSchoolsCTADisplayed() {
+        waitForAjaxElementNotToBePresent(driver,5);
+        assertTrue(isElementDisplayedBySeconds(SPEAKER_FOR_SCHOOL,5));
+    }
+
+    @When("user click on Speakers for Schools CTA")
+    public void userClickOnSpeakersForSchoolsCTA() {
+        clickByElementByQueryJSExecutor(SPEAKER_FOR_SCHOOL);
+    }
+
+    @And("Video is displayed")
+    public void videoIsDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(VIDEO_SCREEN_POPUP,5));
+    }
+
+    @When("user click on play button")
+    public void userClickOnPlayButton() {
+        clickByElementByQueryJSExecutor(VIDEO_SCREEN_POPUP);
+    }
+
+    @Then("Video should get played")
+    public void videoShouldGetPlayed() {
+        assertTrue(isElementDisplayedBySeconds(OPEN_VIDEO_SCREEN,5));
+    }
+
+    @And("User is on Opticians page")
+    public void userIsOnOpticiansPage() {
+        userHoverOnCareerAreas();
+        clickByElementByQueryJSExecutor(OPTICIAN_CAREERAREAS);
+    }
+
+    @And("user is on Support Office Jobs Page")
+    public void userIsOnSupportOfficeJobsPage() {
+        userHoverOnCareerAreas();
+        clickByElementByQueryJSExecutor(SUPPORT_OFFICE_CAREERAREAS);
+    }
+
+    @And("User is on Pharmacy page")
+    public void userIsOnPharmacyPage() {
+        userHoverOnCareerAreas();
+        clickByElementByQueryJSExecutor(PHARMACY_CAREERAREAS);
+    }
+
+    @And("User is on NoSeven page")
+    public void userIsOnNoSevenPage() {
+        waitForAjaxElementNotToBePresent(driver,4);
+        clickByElementByQueryJSExecutor(No7_RETAIL);
+    }
+
+    @When("user click on Pharmacist")
+    public void userClickOnPharmacist() {
+        for(int i=1 ; i<=6 ; i++)
+        {
+            clickByElementByQueryJSExecutor(By.cssSelector("div.btn-block-wrapper > ul > li:nth-child("+i+") > a"));
+
+        }
+    }
+
+    @And("User click on Locum-pharmacist")
+    public void userClickOnLocumPharmacist() {
+        scrollToElement(LOCUM_PHARMACIST_PHARMACY);
+        clickByElementByQueryJSExecutor(LOCUM_PHARMACIST_PHARMACY);
+    }
+
+
+    @And("Discover your path today displayed with CTA Let's start displayed")
+    public void discoverYourPathTodayDisplayedWithCTALetSStartDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(DISCOVER_PATH_BANNER,5));
+        assertTrue(isElementDisplayedBySeconds(DISCOVER_PATH_CTA,5));
+    }
+
+
+    @When("user click Let's start CTA")
+    public void userClickLetSStartCTA() {
+        clickByElementByQueryJSExecutor(DISCOVER_PATH_CTA);
+    }
+
+    @Then("User getting moved to different modal at footer")
+    public void userGettingMovedToDifferentModalAtFooter() {
+        assertTrue(isElementDisplayedBySeconds(BOOTS_CAREERS_TAKE_YOU,5));
+    }
+
+    @And("User is on Pharmacy-store-management")
+    public void userIsOnPharmacyStoreManagement() {
+        scrollToElement(PHARMACY_STORE_PHARMACY);
+        clickByElementByQueryJSExecutor(PHARMACY_STORE_PHARMACY);
+    }
+
+
+    @And("user is on Pharmacy-support")
+    public void userIsOnPharmacySupport() {
+        scrollToElement(PHARMACY_SUPPORT_PHARMACY);
+        clickByElementByQueryJSExecutor(PHARMACY_SUPPORT_PHARMACY);
+    }
+
+    @And("User is on Trainee-pharmacist Page")
+    public void userIsOnTraineePharmacistPage() {
+        scrollToElement(TRAINEE_PHARMACIST_PHARMACY);
+        clickByElementByQueryJSExecutor(TRAINEE_PHARMACIST_PHARMACY);
+    }
+
+    @And("Our Culture displayed")
+    public void ourCultureDisplayed() {
+        scrollToElement(CULTURE_TRAINEE_PHARMACIST);
+        assertTrue(isElementDisplayedBySeconds(CULTURE_TRAINEE_PHARMACIST,5));
+    }
+
+    @And("Trainee pharmacist stories displayed")
+    public void traineePharmacistStoriesDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(STORIES_TRAINEE_PHARMACIST,5));
+    }
+
+    @And("View story CTA displayed")
+    public void viewStoryCTADisplayed() {
+        clickByElementByQueryJSExecutor(VIEW_STORIES_TRAINEE_PHARMACIST);
+    }
+
+    @And("How to apply slider is displayed")
+    public void howToApplySliderIsDisplayed() {
+        scrollToElement(HOW_TO_APPLY_SLIDER);
+        assertTrue(isElementDisplayedBySeconds(HOW_TO_APPLY_SLIDER,5));
+    }
+
+
+    @When("user click on How to apply slider CTA")
+    public void userClickOnHowToApplySliderCTA() {
+        clickByElementByQueryJSExecutor(HOW_TO_APPLY_SLIDER_OPTION);
+    }
+
+    @Then("Information related to the selected criteria is displayed")
+    public void informationRelatedToTheSelectedCriteriaIsDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(HOW_TO_APPLY_DETAILS,5));
+    }
+
+    @And("Our Pharmacy Programmes displayed")
+    public void ourPharmacyProgrammesDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(PHARMACY_PROGRAMMES,5));
+    }
+
+    @When("user click on Each programmes available verify information displayed")
+    public void userClickOnEachProgrammesAvailableVerifyInformationDisplayed() {
+        for(int i=1; i<=3; i++)
+        {
+            clickByElementByQueryJSExecutor(By.cssSelector("div.details-section > ul > li:nth-child("+i+") > div.arrow_box > div > button"));
+            waitForAjaxElementNotToBePresent(driver,4);
+            assertTrue(isElementDisplayedBySeconds(By.cssSelector("div.details-section > ul > li:nth-child("+i+") > div.arrow_box > p"),5));
+        }
+    }
+
+
 }
 
