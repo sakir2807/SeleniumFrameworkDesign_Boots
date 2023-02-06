@@ -386,14 +386,13 @@ Feature: Career Areas feature
     Then enquire form is open now
 
 
-
   Scenario: Verify Opticians List pages
     And User is on Opticians page
     And Current Vacancies displayed
     And Share page dropdown displayed
-    When user click on 'Current Vacancies' CTA
-    Then User get redirected to search job page
-    When user Click on Share page Dropdown with social media links displayed.
+    When user click on Current Vacancies CTA
+    Then assert URL contains text 'SearchJobsUrl.key'
+
 #  Check all the above steps for below pages:
 #  Optometrist Jobs
 #  Optical Support Roles
@@ -412,41 +411,37 @@ Feature: Career Areas feature
 
 
   Scenario: Verify Supply Chain Page list Pharmacy-distribution
-    And user is on Supply Chain Page
-    And user is on Pharmacy-distribution
-    And 'Current Vacancies' displayed
+    And User is on Supply-chain page
+    And user click on Pharmacy Distribution
+    And Current Vacancies displayed
     And Share page dropdown displayed
-    When user click on 'Current Vacancies' CTA
+    When user click on Current Vacancies CTA
     Then assert URL contains text 'SearchJobsUrl.key'
-    When user Click on Share page Dropdown with social media links displayed
 
 
   Scenario: Verify Warehouse Job under Supply Chain Page list
-    And user is on Supply Chain Page
-    And user is on Warehouse Job
+    And User is on Supply-chain page
+    And user click on Warehousing
     And Current Vacancies displayed
-    And Pertemps , AM2PM CTA displayed
+    And Pertemps, AMPM CTA displayed
     And Share page dropdown displayed
     When user click on Current Vacancies CTA
-    Then User get redirected to search job page
-    When user Click on Share page Dropdown with social media links displayed.
+    Then assert URL contains text 'SearchJobsUrl.key'
     When user click on Pertemps
-    Then it get redirected to Pertemps page
-    When user click on AM2PMx
-    Then it get redirect to AM2PM
+    Then assert URL open in different tabs contains text 'PertempsUrl.key'
+    When user click on AMPM
+    Then assert URL open in different tabs contains text 'AMPMUrl.key'
 
 
   Scenario: Verify  Why Join us CTAs on Early Careers page
-    And User is on Early Careers Page
-    And Apprenticeships, Graduates, Summer Internships and Work Experience CTA displayed
+    And User is on Early Careers page
+    And Apprenticeships, Graduate and Work Experience CTA displayed
     When user click on Apprenticeships
-    Then User redirects to Apprenticeships page
+    Then assert URL contains text 'ApprenticeshipsUrl.key'
     When user click on Graduates
-    Then user redirects to Graduates page
-    When user click on Summer Internships
-    Then user redirects to Summer Internships page
+    Then assert URL contains text 'GraduateUrl.key'
     When user click on Work Experience
-    Then user redirects to Work Experience page
+    Then assert URL contains text 'WorkExperienceUrl.key'
 
 
   Scenario: Verify Video on Early Careers page
@@ -458,7 +453,7 @@ Feature: Career Areas feature
 
   Scenario: Verify Headers on Apprenticeships page
     And User is on Early Careers page
-    And User is on Apprenticeships page
+    And user click on Apprenticeships
     And  Headers displayed
     When user click on Our Apprenticeship
     Then Our Apprenticeship section displayed
@@ -480,7 +475,7 @@ Feature: Career Areas feature
 
   Scenario: Verify Apprenticeships page
     And User is on Early Careers page
-    And User is on Apprenticeships page
+    And user click on Apprenticeships
     And  Video displayed
     And Hint & Tips CTA displayed
     And Application Process stages displayed
@@ -494,7 +489,7 @@ Feature: Career Areas feature
 
   Scenario: Verify Resources and Safeguarding on Apprenticeships page
     And User is on Early Careers page
-    And User is on  Apprenticeships page
+    And user click on Apprenticeships
     And  Resources displayed
     And Safeguarding displayed
     When user click on download CTA for Student's Guide to Apprenticeships
@@ -509,7 +504,7 @@ Feature: Career Areas feature
 
   Scenario: Verify Headers on Graduates page
     And User is on Early Careers page
-    And User is on  Graduates page
+    And user click on Graduates
     And  Headers displayed
     When user click on Introduction
     Then Introduction section displayed
@@ -527,7 +522,7 @@ Feature: Career Areas feature
 
   Scenario: Verify Graduates page
     And User is on Early Careers page
-    And User is on  Graduates page
+    And user click on Graduates
     And  Video displayed
     And Hint & Tips CTA displayed
     And Application Process stages displayed

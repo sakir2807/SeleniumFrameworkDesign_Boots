@@ -290,7 +290,17 @@ public class HomePageSteps extends BaseTest {
     private static final By APPLICATION_PROCESS_OPTION_DESCRIPTION = By.cssSelector("#application-process div.our-application-slider > div.application-for.slick-initialized.slick-slider div.slick-slide.slick-current.slick-active div.slide-left > h3");
     private static final By FRANCHISE_OPTICIAN = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(5) > a");
     private static final By ENQUIRE_NOW_CTA = By.cssSelector("#introduction a");
-    private static final By ENQUIRE_FORM = By.cssSelector("#introduction a#franchise-apply-form > div.container.init.form-wrapper > div");
+    private static final By ENQUIRE_FORM = By.cssSelector("#franchise-apply-form > div.container.init.form-wrapper > div");
+    private static final By SUPPLY_CHAIN = By.cssSelector("li.menu-item.menu-item-type-post_type.menu-item-object-page.current-menu-item > a");
+    private static final By SUPPLY_CHAIN_SUB_OPTIONS = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper");
+    private static final By PHARMACY_DISTRIBUTION = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(1) > a");
+    private static final By WAREHOUSING = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(2) > a");
+    private static final By SUPPLY_DEMAND_PLANNING = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(3) > a");
+    private static final By PERTEMPS = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(1) > a");
+    private static final By AMPM = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(2) > a");
+    private static final By APPRENTICESHIP = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(1) > a");
+    private static final By GRADUATE = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(2) > a");
+    private static final By WORK_EXPERIENCE = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(3) > a");
 
 
 
@@ -1950,6 +1960,89 @@ public class HomePageSteps extends BaseTest {
     @Then("enquire form is open now")
     public void enquireFormIsOpenNow() {
         assertTrue(isElementDisplayedBySeconds(ENQUIRE_FORM,5));
+    }
+
+    @And("User is on Supply-chain page")
+    public void userIsOnSupplyChainPage() {
+        userHoverOnCareerAreas();
+        clickByElementByQueryJSExecutor(SUPPLY_CHAIN);
+
+    }
+
+    @And("Pharmacy Distribution, Warehousing, Supply & Demand Planning CTA displayed")
+    public void pharmacyDistributionWarehousingSupplyDemandPlanningCTADisplayed() {
+        scrollToElement(SUPPLY_CHAIN_SUB_OPTIONS);
+        assertTrue(isElementDisplayedBySeconds(SUPPLY_CHAIN_SUB_OPTIONS,5));
+    }
+
+    @When("user click on Pharmacy Distribution")
+    public void userClickOnPharmacyDistribution() {
+        clickByElementByQueryJSExecutor(PHARMACY_DISTRIBUTION);
+    }
+
+    @When("user click on Warehousing")
+    public void userClickOnWarehousing() {
+        driver.navigate().back();
+        waitForExpectedElement(SUPPLY_CHAIN_SUB_OPTIONS);
+        scrollToElement(WAREHOUSING);
+        clickByElementByQueryJSExecutor(WAREHOUSING);
+    }
+
+    @When("user click on Supply & Demand Planning")
+    public void userClickOnSupplyDemandPlanning() {
+        driver.navigate().back();
+        waitForExpectedElement(SUPPLY_CHAIN_SUB_OPTIONS);
+        scrollToElement(SUPPLY_DEMAND_PLANNING);
+        clickByElementByQueryJSExecutor(SUPPLY_DEMAND_PLANNING);
+    }
+
+
+    @And("Pertemps, AMPM CTA displayed")
+    public void pertempsAMPMCTADisplayed() {
+        scrollToElement(PERTEMPS);
+        assertTrue(isElementDisplayedBySeconds(PERTEMPS,4));
+        assertTrue(isElementDisplayedBySeconds(AMPM,4));
+
+    }
+
+    @When("user click on Pertemps")
+    public void userClickOnPertemps() {
+        clickByElementByQueryJSExecutor(PERTEMPS);
+    }
+
+    @When("user click on AMPM")
+    public void userClickOnAMPM() {
+        scrollToElement(AMPM);
+        clickByElementByQueryJSExecutor(AMPM);
+    }
+
+
+    @And("Apprenticeships, Graduate and Work Experience CTA displayed")
+    public void apprenticeshipsGraduatesAndWorkExperienceCTADisplayed() {
+        scrollToElement(APPRENTICESHIP);
+        assertTrue(isElementDisplayedBySeconds(APPRENTICESHIP,5));
+        assertTrue(isElementDisplayedBySeconds(GRADUATE,5));
+        assertTrue(isElementDisplayedBySeconds(WORK_EXPERIENCE,5));
+
+    }
+
+    @When("user click on Apprenticeships")
+    public void userClickOnApprenticeships() {
+        clickByElementByQueryJSExecutor(APPRENTICESHIP);
+    }
+
+    @When("user click on Graduates")
+    public void userClickOnGraduates() {
+        driver.navigate().back();
+        waitForExpectedElement(GRADUATE);
+        clickByElementByQueryJSExecutor(GRADUATE);
+    }
+
+    @When("user click on Work Experience")
+    public void userClickOnWorkExperience() {
+        driver.navigate().back();
+        waitForExpectedElement(WORK_EXPERIENCE);
+        clickByElementByQueryJSExecutor(WORK_EXPERIENCE);
     }
 }
 
