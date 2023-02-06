@@ -255,6 +255,42 @@ public class HomePageSteps extends BaseTest {
     private static final By HOW_TO_APPLY_SLIDER_OPTION = By.cssSelector("div.application-nav.test.slick-initialized.slick-slider > div > div > div:nth-child(2) > div > button");
     private static final By HOW_TO_APPLY_DETAILS = By.cssSelector("div.slick-slide.slick-current.slick-active div.slide-left > div");
     private static final By PHARMACY_PROGRAMMES = By.cssSelector("#our-pharmacy-programmes");
+    private static final By BEAUTY_SPECIALIST_RETAIL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(2) > a");
+    private static final By CUSTOMER_ADVISOR_RETAIL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(1) > a");
+    private static final By LIZ_EARLE_RETAIL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(5) > a");
+    private static final By MEET_DAVID_TITLE = By.cssSelector("section.career-block-image div.content-wrapper > h3");
+    private static final By MEET_DAVID_READ_MORE = By.cssSelector("section.career-block-image div.content-wrapper > a");
+    private static final By RETAIL_MANAGEMENT_RETAIL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(6) > a");
+    private static final By REGISTER_INTEREST_TRAINEE = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(6) > a");
+    private static final By BENEFITS_TRAINEE = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(6) > a");
+    private static final By CAREER_MAPPER_LETS_START = By.cssSelector("#career-mapper > div.start-overlay > a");
+    private static final By GRAPH_ROUTE = By.cssSelector("#career-mapper > div.cm-start.go > div.cm-s-route");
+    private static final By GRAPH_FIRST_ICON = By.cssSelector("#career-mapper > div.cm-start.go > div.cm-s-route > a:nth-child(1) > div");
+    private static final By ROLE_CONTENT_GRAPH = By.cssSelector("#career-mapper > div.cm-wrapper.visible > div.step.cm-detail-level-1.active.opened");
+    private static final By ROLE_CONTINUE_MY_STORY_CTA = By.cssSelector("div.rel > a.button.navy-blue.white-t.cont");
+    private static final By CONTENT_SECOND_ROLE_GRAPH = By.cssSelector("div.abs-pos.box-1.next > div > p");
+    private static final By SECOND_PAGE_NEXT_CTA = By.cssSelector("div.abs-pos.box-1.next > div > a");
+    private static final By GRAPH_SECOND_STORY_OPEN = By.cssSelector("#career-mapper > div.cm-wrapper.visible > div.step.cm-detail-level-2.active");
+    private static final By RELOCATE_WITH_US_CTA_PHARMACIST = By.cssSelector("#content > section:nth-child(4) div:nth-child(2) > div.content-wrapper > a");
+    private static final By TRAINEE_PHARMACIST_HEADER = By.cssSelector("#hub-top-nav");
+    private static final By OUR_CULTURE_SCROLL_CTA = By.cssSelector("#changinglivesinyourcommunity > div > button.slick-next.slick-arrow");
+    private static final By OUR_CULTURE_SECOND_IMAGE = By.cssSelector("#changinglivesinyourcommunity div.slick-slide.slick-current.slick-active div.slide-image-wrapper > img");
+    private static final By OUR_CULTURE_SECOND_TEXT = By.cssSelector("#changinglivesinyourcommunity div.slick-slide.slick-current.slick-active div.para");
+    private static final By TRAINEE_STORIES_SCROLL_CTA = By.cssSelector("#trainee-pharmacist-stories div.pill-controlled-slider-box > div.pill-controlled-slider.slick-initialized.slick-slider > button.slick-next.slick-arrow");
+    private static final By TRAINEE_STORIES_SECOND_IMAGE = By.cssSelector("div.pill-controlled-slider.slick-initialized.slick-slider div.slick-slide.slick-current.slick-active div.image");
+    private static final By TRAINEE_STORIES_SECOND_TEXT = By.cssSelector("div.pill-controlled-slider.slick-initialized.slick-slider div.slick-slide.slick-current.slick-active > div > div >div.common-slider-para > p:nth-child(1)");
+    private static final By TRAINEE_STORIES_VIEW_ALL_CTA = By.cssSelector("div.pill-controlled-slider.slick-initialized.slick-slider div.slick-slide.slick-current.slick-active div.common-slider-para > a.hub-button");
+    private static final By OPTOMETRIST_OPTICIAN_PAGE = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(1) > a");
+    private static final By PRE_REG_OPTOMETRIST_OPTICIAN_PAGE = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(2) > a");
+    private static final By HINT_TIPS_CTA = By.cssSelector("#hub-popups > a");
+    private static final By HINT_TIPS_POPUP = By.cssSelector("div.mfp-content > div");
+    private static final By HINT_TIPS_DESCRIPTION = By.cssSelector("#hints-tips > div > div.stage-thumb.full-width > ul > li:nth-child(2)");
+    private static final By APPLICATION_PROCESS_OPTICIAN = By.cssSelector("#application-process > div > div");
+    private static final By APPLICATION_PROCESS_OPTION = By.cssSelector("div.our-application-slider > div.application-nav.test div:nth-child(2) > div > button");
+    private static final By APPLICATION_PROCESS_OPTION_DESCRIPTION = By.cssSelector("#application-process div.our-application-slider > div.application-for.slick-initialized.slick-slider div.slick-slide.slick-current.slick-active div.slide-left > h3");
+    private static final By FRANCHISE_OPTICIAN = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(5) > a");
+    private static final By ENQUIRE_NOW_CTA = By.cssSelector("#introduction a");
+    private static final By ENQUIRE_FORM = By.cssSelector("#introduction a#franchise-apply-form > div.container.init.form-wrapper > div");
 
 
 
@@ -1676,5 +1712,244 @@ public class HomePageSteps extends BaseTest {
     }
 
 
+    @And("User is on beauty-specialist page")
+    public void userIsOnBeautySpecialistPage() {
+        clickByElementByQueryJSExecutor(BEAUTY_SPECIALIST_RETAIL);
+        waitForAjaxElementNotToBePresent(driver,4);
+    }
+
+
+    @And("User is on customer-advisor")
+    public void userIsOnCustomerAdvisor() {
+        clickByElementByQueryJSExecutor(CUSTOMER_ADVISOR_RETAIL);
+        waitForAjaxElementNotToBePresent(driver,4);
+    }
+
+    @And("User is on Liz-earle")
+    public void userIsOnLizEarle() {
+        clickByElementByQueryJSExecutor(LIZ_EARLE_RETAIL);
+        waitForAjaxElementNotToBePresent(driver,4);
+    }
+
+
+    @And("Meet David – Service & Education Trainer for Liz Earle Displayed with image and Read more button")
+    public void meetDavidServiceEducationTrainerForLizEarleDisplayedWithImageAndReadMoreButton() {
+        assertTrue(isElementDisplayedBySeconds(MEET_DAVID_TITLE,5));
+        assertTrue(isElementDisplayedBySeconds(MEET_DAVID_READ_MORE,5));
+
+    }
+
+    @When("user click on Read more under  Meet David – Service & Education Trainer for Liz Earle")
+    public void userClickOnReadMoreUnderMeetDavidServiceEducationTrainerForLizEarle() {
+        clickByElementByQueryJSExecutor(MEET_DAVID_READ_MORE);
+    }
+
+    @And("User is on Retail management")
+    public void userIsOnRetailManagement() {
+        clickByElementByQueryJSExecutor(RETAIL_MANAGEMENT_RETAIL);
+        waitForAjaxElementNotToBePresent(driver,4);
+    }
+
+    @And("user is on pharmacist-newly-qualified")
+    public void userIsOnPharmacistNewlyQualified() {
+        clickByElementByQueryJSExecutor(PHARMACIST_NEWLY_PHARMACY);
+        waitForAjaxElementNotToBePresent(driver,4);
+
+    }
+
+    @And("Register your interest and Benefit CTA displayed")
+    public void registerYourInterestAndBenefitCTADisplayed() {
+        scrollToElement(REGISTER_INTEREST_TRAINEE);
+        assertTrue(isElementDisplayedBySeconds(REGISTER_INTEREST_TRAINEE,5));
+        assertTrue(isElementDisplayedBySeconds(BENEFITS_TRAINEE,5));
+    }
+
+    @And("user click on Benefit")
+    public void userClickOnBenefit() {
+        clickByElementByQueryJSExecutor(BENEFITS_TRAINEE);
+    }
+
+    @And("Popup with Salary, Pension Scheme,  Lifeworks, Bonus scheme, The Benefits Box and GPHC PSNI  is displayed with icons")
+    public void popupWithSalaryPensionSchemeLifeworksBonusSchemeTheBenefitsBoxAndGPHCPSNIIsDisplayedWithIcons() {
+        for(int i=1; i<=6; i++)
+        {
+            assertTrue(isElementDisplayedBySeconds(By.cssSelector("#benefits > div > div.stage-thumb > ul > li:nth-child("+i+")"),5));
+        }
+    }
+
+
+    @When("user again click on Let's start")
+    public void userAgainClickOnLetSStart() {
+        clickByElementByQueryJSExecutor(CAREER_MAPPER_LETS_START);
+    }
+
+    @Then("Graph with different CTA displayed")
+    public void graphWithDifferentCTADisplayed() {
+        assertTrue(isElementDisplayedBySeconds(GRAPH_ROUTE,5));
+    }
+
+    @When("user click on any one icon")
+    public void userClickOnAnyOneIcon() {
+        clickByElementByQueryJSExecutor(GRAPH_FIRST_ICON);
+    }
+
+    @Then("User is getting redirected to the role selected content")
+    public void userIsGettingRedirectedToTheRoleSelectedContent() {
+        waitForAjaxElementNotToBePresent(driver,4);
+        assertTrue(isElementDisplayedBySeconds(ROLE_CONTENT_GRAPH,5));
+    }
+
+    @When("user click on continue my story")
+    public void userClickOnContinueMyStory() {
+        clickByElementByQueryJSExecutor(ROLE_CONTINUE_MY_STORY_CTA);
+    }
+
+    @Then("Next button with content displayed")
+    public void nextButtonWithContentDisplayed() {
+        waitForAjaxElementNotToBePresent(driver,4);
+        assertTrue(isElementDisplayedBySeconds(CONTENT_SECOND_ROLE_GRAPH,5));
+        assertTrue(isElementDisplayedBySeconds(SECOND_PAGE_NEXT_CTA,5));
+    }
+
+    @When("user click on next")
+    public void userClickOnNext() {
+        clickByElementByQueryJSExecutor(SECOND_PAGE_NEXT_CTA);
+    }
+
+    @Then("user redirected to next role in graph")
+    public void userRedirectedToNextRoleInGraph() {
+        assertTrue(isElementDisplayedBySeconds(GRAPH_SECOND_STORY_OPEN,5));
+    }
+
+    @And("User is on Pharmacist page")
+    public void userIsOnPharmacistPage() {
+        clickByElementByQueryJSExecutor(PHARMACIST_PHARMACY);
+
+    }
+
+    @And("Relocate with us CTA displayed")
+    public void relocateWithUsCTADisplayed() {
+        assertTrue(isElementDisplayedBySeconds(RELOCATE_WITH_US_CTA_PHARMACIST,5));
+    }
+
+    @When("user click on relocate with us")
+    public void userClickOnRelocateWithUs() {
+        scrollToElement(RELOCATE_WITH_US_CTA_PHARMACIST);
+        clickByElementByQueryJSExecutor(RELOCATE_WITH_US_CTA_PHARMACIST);
+    }
+
+    @And("Headers displayed")
+    public void headersDisplayed() {
+        waitForExpectedElement(TRAINEE_PHARMACIST_HEADER);
+        assertTrue(isElementDisplayedBySeconds(TRAINEE_PHARMACIST_HEADER,5));
+    }
+
+    @When("click and verify each header")
+    public void clickAndVerifyEachHeader() {
+        for(int i=1; i<=6; i++)
+        {
+            assertTrue(isElementDisplayedBySeconds(By.cssSelector("#hub-top-nav > ul > li:nth-child("+i+") > a"),5));
+            clickByElementByQueryJSExecutor(By.cssSelector("#hub-top-nav > ul > li:nth-child("+i+") > a"));
+        }
+
+    }
+
+    @When("user click on Our Culture scroll CTA")
+    public void userClickOnOurCultureScrollCTA() {
+        scrollToElement(OUR_CULTURE_SCROLL_CTA);
+        clickByElementByQueryJSExecutor(OUR_CULTURE_SCROLL_CTA);
+    }
+
+    @Then("Our culture images with information displayed")
+    public void ourCultureImagesWithInformationDisplayed() {
+        waitForAjaxElementNotToBePresent(driver,4);
+        assertTrue(isElementDisplayedBySeconds(OUR_CULTURE_SECOND_IMAGE,5));
+        assertTrue(isElementDisplayedBySeconds(OUR_CULTURE_SECOND_TEXT,5));
+    }
+
+    @When("user click on Trainee pharmacist stories scroll CTA")
+    public void userClickOnTraineePharmacistStoriesScrollCTA() {
+        scrollToElement(TRAINEE_STORIES_SCROLL_CTA);
+        clickByElementByQueryJSExecutor(TRAINEE_STORIES_SCROLL_CTA);
+    }
+
+    @Then("Trainee pharmacist stories images with information displayed")
+    public void traineePharmacistStoriesImagesWithInformationDisplayed() {
+        waitForAjaxElementNotToBePresent(driver,4);
+        assertTrue(isElementDisplayedBySeconds(TRAINEE_STORIES_SECOND_IMAGE,5));
+        assertTrue(isElementDisplayedBySeconds(TRAINEE_STORIES_SECOND_TEXT,5));
+    }
+
+
+    @When("user click on View all stories of trainee")
+    public void userClickOnViewAllStoriesOfTrainee() {
+        clickByElementByQueryJSExecutor(TRAINEE_STORIES_VIEW_ALL_CTA);
+    }
+
+    @And("User is on Optometrist page")
+    public void userIsOnOptometristPage() {
+        clickByElementByQueryJSExecutor(OPTOMETRIST_OPTICIAN_PAGE);
+    }
+
+    @And("User is on Pre-reg-optometrist Page")
+    public void userIsOnPreRegOptometristPage() {
+        clickByElementByQueryJSExecutor(PRE_REG_OPTOMETRIST_OPTICIAN_PAGE);
+    }
+
+    @And("Hint & tips CTA displayed")
+    public void hintTipsCTADisplayed() {
+        scrollToElement(HINT_TIPS_CTA);
+        assertTrue(isElementDisplayedBySeconds(HINT_TIPS_CTA,5));
+    }
+
+    @When("user click on Hint & tips CTA")
+    public void userClickOnHintTipsCTA() {
+        clickByElementByQueryJSExecutor(HINT_TIPS_CTA);
+    }
+
+
+    @Then("Popup with Interviews and application information displayed")
+    public void popupWithInterviewsAndApplicationInformationDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(HINT_TIPS_POPUP,5));
+        assertTrue(isElementDisplayedBySeconds(HINT_TIPS_DESCRIPTION,5));
+    }
+
+    @And("Application Process displayed")
+    public void applicationProcessDisplayed() {
+        clickByElementByQueryJSExecutor(APPLICATION_PROCESS_OPTICIAN);
+    }
+
+    @When("user click on Application Process stage CTA")
+    public void userClickOnApplicationProcessStageCTA() {
+        clickByElementByQueryJSExecutor(APPLICATION_PROCESS_OPTION);
+    }
+
+    @Then("Stage should get selected and information displayed")
+    public void stageShouldGetSelectedAndInformationDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(APPLICATION_PROCESS_OPTION_DESCRIPTION,5));
+
+    }
+
+    @And("User is on Franchise Page")
+    public void userIsOnFranchisePage() {
+        scrollToElement(FRANCHISE_OPTICIAN);
+        clickByElementByQueryJSExecutor(FRANCHISE_OPTICIAN);
+    }
+
+    @And("Enquire now CTA displayed")
+    public void enquireNowCTADisplayed() {
+        waitForExpectedElement(ENQUIRE_NOW_CTA);
+        assertTrue(isElementDisplayedBySeconds(ENQUIRE_NOW_CTA,4));
+    }
+
+    @When("user click on Enquire now")
+    public void userClickOnEnquireNow() {
+        clickByElementByQueryJSExecutor(ENQUIRE_NOW_CTA);
+    }
+
+    @Then("enquire form is open now")
+    public void enquireFormIsOpenNow() {
+        assertTrue(isElementDisplayedBySeconds(ENQUIRE_FORM,5));
+    }
 }
 

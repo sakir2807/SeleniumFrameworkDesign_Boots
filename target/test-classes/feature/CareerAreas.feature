@@ -44,6 +44,7 @@ Feature: Career Areas feature
 
 
   Scenario: Verify Current vacancies and Share jobs on Customer-advisor page
+    And User is on Retail page
     And User is on customer-advisor
     And Current Vacancies displayed
     And Share page dropdown displayed
@@ -53,15 +54,13 @@ Feature: Career Areas feature
 
 
   Scenario: Verify Current vacancies and Share jobs on Liz-earle page
+    And User is on Retail page
     And User is on Liz-earle
     And Current Vacancies displayed
     And Share page dropdown displayed
     And Meet David – Service & Education Trainer for Liz Earle Displayed with image and Read more button
-    When user click on Current Vacancies CTA
-    Then assert URL contains text 'SearchJobsUrl.key'
-    When user Click on Share page Dropdown with social media links displayed
     When user click on Read more under  Meet David – Service & Education Trainer for Liz Earle
-    Then User getting redirected to details page on Liz Earle
+    Then assert URL contains text 'LizEarleDavidUrl.key'
 
 
   Scenario: Verify Current vacancies and Share jobs on Liz-earle page
@@ -73,6 +72,7 @@ Feature: Career Areas feature
 
 
   Scenario: Verify Retail-management page
+    And User is on Retail page
     And User is on Retail management
     And Current Vacancies displayed
     And Share page dropdown displayed
@@ -106,19 +106,19 @@ Feature: Career Areas feature
   Scenario: Verify Discover your path today on Pharmacy page
     And User is on Pharmacy page
     And Discover your path today displayed with CTA Let's start displayed
-    And View job CTA displayed
+    And View job CTA displayed # don't know where it is
     When user click on View job CTA
     Then assert URL contains text 'SearchJobsUrl.key'
-    When user click 'Let's start' CTA
-    Then User redirected to footer
+    When user click Let's start CTA
+    Then User getting moved to different modal at footer
     When user again click on Let's start
     Then Graph with different CTA displayed
     When user click on any one icon
-    Then User is getting redirected to the different page
-    When user click on continue story
+    Then User is getting redirected to the role selected content
+    When user click on continue my story
     Then Next button with content displayed
     When user click on next
-    Then user redirected to next page
+    Then user redirected to next role in graph
 
 
 
@@ -127,11 +127,11 @@ Feature: Career Areas feature
     And User is on Pharmacist page
     And Discover your path today displayed with CTA Let's start displayed
     And Relocate with us CTA displayed
-    And Chat with us CTA displayed
+    And Chat with us CTA displayed#where it is
     When user click Let's start CTA
     Then User getting moved to different modal at footer
     When user click on relocate with us
-    Then user redirected to Pharmacist Relocation page
+    Then assert URL contains text 'RelocationUrl.key'
     When user click on Chat with us
     Then Popup should get displayed with chat window
 
@@ -141,39 +141,26 @@ Feature: Career Areas feature
     And User is on Pharmacy page
     And user is on pharmacist-newly-qualified
     And Discover your path today displayed with CTA Let's start displayed
-    And  Video displayed
+    And  Video is displayed
     When user click Let's start CTA
     Then User getting moved to different modal at footer
-    When user click Video.
-    Then Video is played
+    When user click on play button
+    Then Video should get played
 
 
   Scenario: Verify Headers on Trainee-pharmacist Page
     And User is on Pharmacy page
     And User is on Trainee-pharmacist Page
     And  Headers displayed
-    When user click on Introduction
-    Then Introduction section displayed
-    When user click on Our Pharmacy Programmes
-    Then Our Pharmacy Programmes section displayed
-    When user click on How to apply
-    Then How to apply section displayed
-    When user click on Our culture
-    Then Our culture section displayed
-    When user click on Our Team
-    Then Our Team section displayed
-    When User click on FAQs
-    Then FAQs section displayed
+    Then click and verify each header
 
 
   Scenario: Verify Register your interest and Benefit CTA on Trainee-pharmacist page
     And User is on Pharmacy page
     And User is on Trainee-pharmacist Page
     And Register your interest and Benefit CTA displayed
-    When user click on Register your interest CTA
     And user click on Benefit
-    Then User get redirected
-    And Popup with Salary, Pension Scheme,  Lifeworks, Bonus scheme, The Benefits Box and GPHC / PSNI  is displayed with icons
+    And Popup with Salary, Pension Scheme,  Lifeworks, Bonus scheme, The Benefits Box and GPHC PSNI  is displayed with icons
 
 
   Scenario: Verify Our Pharmacy Programmes Trainee-pharmacist page
@@ -181,7 +168,6 @@ Feature: Career Areas feature
     And User is on Trainee-pharmacist Page
     And  Our Pharmacy Programmes displayed
     When user click on Each programmes available verify information displayed
-
 
 
   Scenario: Verify How to apply clicks CTA on Trainee-pharmacist Page
@@ -260,7 +246,7 @@ Feature: Career Areas feature
     Then assert URL contains text 'TechnologyUrl.key'
 
 
-  Scenario: Verify Video  Support Office Jobs page
+  Scenario: Verify Video Support Office Jobs page
     And user is on Support Office Jobs Page
     And Video is displayed
     When user click on play button
@@ -269,11 +255,10 @@ Feature: Career Areas feature
 
   Scenario: Verify Support Office Jobs List pages
     And user is on Support Office Jobs Page
-    And 'Current Vacancies' displayed
+    And Current Vacancies displayed
     And Share page dropdown displayed
-    When user click on 'Current Vacancies' CTA
+    When user click on Current Vacancies CTA
     Then assert URL contains text 'SearchJobsUrl.key'
-    When user Click on Share page Dropdown with social media links displayed.
 #  Check all the above steps for below pages:
 #  Business Support & Operations
 #  Buying & Merchandising
@@ -314,10 +299,11 @@ Feature: Career Areas feature
 
 
   Scenario: Verify Video Optometrist page
+    And User is on Opticians page
     And User is on Optometrist page
     And Video is displayed
     When user click on play button
-    Then Videos should get played
+    Then Video should get played
 
 
   Scenario: Verify Headers on pre-reg-optometrist page
