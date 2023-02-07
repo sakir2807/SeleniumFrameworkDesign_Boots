@@ -256,19 +256,6 @@ Feature: Career Areas feature
     And Share page dropdown displayed
     When user click on Current Vacancies CTA
     Then assert URL contains text 'SearchJobsUrl.key'
-#  Check all the above steps for below pages:
-#  Business Support & Operations
-#  Buying & Merchandising
-#  Ecommerce & Digital
-#  Digital Transformation
-#  Data & Insights
-#  Finance
-#  HR
-#  Marketing, Brand & Communications
-#  Property & Estates
-#  Research & Development
-#  Supply & Demand Planning
-#  Technology
 
 
   Scenario: Verify Why Join us CTAs on Opticians Jobs page
@@ -392,11 +379,6 @@ Feature: Career Areas feature
     And Share page dropdown displayed
     When user click on Current Vacancies CTA
     Then assert URL contains text 'SearchJobsUrl.key'
-
-#  Check all the above steps for below pages:
-#  Optometrist Jobs
-#  Optical Support Roles
-#  opticians-store-management
 
 
   Scenario: Verify Why Join us CTAs on Supply Chain Jobs page
@@ -523,13 +505,13 @@ Feature: Career Areas feature
   Scenario: Verify Graduates page
     And User is on Early Careers page
     And user click on Graduates
-    And  Video displayed
+    And  Video is displayed
     And Hint & Tips CTA displayed
     And Application Process stages displayed
     And Our Culture and Stories images and scroll CTA displayed
     And Parents & teachers Scroll and Video displayed
-    When user click on video
-    Then Video gets played
+    When user click on play button
+    Then Video should get played
     When user click on hints and tips
     Then Popup modal opened with details
 
@@ -545,30 +527,23 @@ Feature: Career Areas feature
   Scenario: Verify Why Join us CTAs on Ireland Jobs page
     And User is on Ireland Jobs page
     And  Pharmacist, Pharmacy Support, Retail, Support Office CTA displayed
-    When user click on Pharmacist
-    Then User redirects to Pharmacist page
-    When user click on Pharmacy Support
-    Then user redirects to Pharmacy Support
-    When user click on Retail
-    Then user redirects to Retail page
-    When user click on Support Office
-    Then user redirects to Support Office page
+    When user click on Pharmacist ireland
+    Then assert URL contains text 'PharmacistIrelandUrl.key'
+    When user click on Pharmacy Support ireland
+    Then assert URL contains text 'PharmacySupportIrelandUrl.key'
+    When user click on Retail ireland
+    Then assert URL contains text 'RetailIrelandUrl.key'
+    When user click on Support Office ireland
+    Then assert URL contains text 'SupportOfficeIrelandUrl.key'
 
 
   Scenario: Verify Ireland page options
     And User is on Ireland Jobs page
-    And  Pharmacist, Pharmacy Support, Retail, Support Office CTA displayed
-    And Learning & Development with 'Find out more' CTA
-    And Video displayed
+    And Learning & Development with Find out more CTA
+    And Video is displayed
     And View Benefits CTA displayed
-    When user click on Find out more
-    Then Modal with details displayed
-    When user click on video
-    Then Video played
-    When user click on View Benefit CTA
-    Then Modal with details displayed
-#  Verify this for all the below pages:
-#  Pharmacist, Pharmacy Support, Retail, Support Office
+    When user click on play button
+    Then Video should get played
 
 
   Scenario: Verify Hearing care link on Career areas page

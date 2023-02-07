@@ -301,6 +301,15 @@ public class HomePageSteps extends BaseTest {
     private static final By APPRENTICESHIP = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(1) > a");
     private static final By GRADUATE = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(2) > a");
     private static final By WORK_EXPERIENCE = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(3) > a");
+    private static final By IRELAND = By.cssSelector("li.menu-item.menu-item-type-post_type.menu-item-object-page.current-menu-item > a");
+    private static final By IRELAND_SUBSECTION = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper");
+    private static final By PHARMACIST_IRELAND = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(1) > a");
+    private static final By PHARMACY_SUPPORT_IRELAND = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(2) > a");
+    private static final By RETAIL_IRELAND = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(3) > a");
+    private static final By SUPPORT_OFFICE_IRELAND = By.cssSelector("section.why-join-us div.btn-block-wrapper > ul > li:nth-child(4) > a");
+    private static final By LEARNING_DEVELOPMENT_IRELAND = By.cssSelector("#content > section:nth-child(3) div.img-wrapper-block.dark-bg > div.content-wrapper");
+    private static final By LD_IRELAND_FIND_MORE_CTA = By.cssSelector("section:nth-child(3) div.img-wrapper-block.dark-bg > div.content-wrapper > button");
+    private static final By VIEW_BENEFIT_IRELAND = By.cssSelector("#content > section:nth-child(4) div.content-wrapper > button");
 
 
 
@@ -1621,14 +1630,14 @@ public class HomePageSteps extends BaseTest {
         clickByElementByQueryJSExecutor(No7_RETAIL);
     }
 
-    @When("user click on Pharmacist")
+    /*@When("user click on Pharmacist")
     public void userClickOnPharmacist() {
         for(int i=1 ; i<=6 ; i++)
         {
             clickByElementByQueryJSExecutor(By.cssSelector("div.btn-block-wrapper > ul > li:nth-child("+i+") > a"));
 
         }
-    }
+    }*/
 
     @And("User click on Locum-pharmacist")
     public void userClickOnLocumPharmacist() {
@@ -2043,6 +2052,62 @@ public class HomePageSteps extends BaseTest {
         driver.navigate().back();
         waitForExpectedElement(WORK_EXPERIENCE);
         clickByElementByQueryJSExecutor(WORK_EXPERIENCE);
+    }
+
+    @And("User is on Ireland Jobs page")
+    public void userIsOnIrelandJobsPage() {
+        userHoverOnCareerAreas();
+        clickByElementByQueryJSExecutor(IRELAND);
+    }
+
+    @And("Pharmacist, Pharmacy Support, Retail, Support Office CTA displayed")
+    public void pharmacistPharmacySupportRetailSupportOfficeCTADisplayed() {
+        waitForExpectedElement(IRELAND_SUBSECTION);
+        assertTrue(isElementDisplayedBySeconds(PHARMACIST_IRELAND,5));
+        assertTrue(isElementDisplayedBySeconds(PHARMACY_SUPPORT_IRELAND,5));
+        assertTrue(isElementDisplayedBySeconds(RETAIL_IRELAND,5));
+        assertTrue(isElementDisplayedBySeconds(SUPPORT_OFFICE_IRELAND,5));
+
+    }
+
+    @When("user click on Pharmacist ireland")
+    public void userClickOnPharmacistIreland() {
+        clickByElementByQueryJSExecutor(PHARMACIST_IRELAND);
+    }
+
+    @When("user click on Pharmacy Support ireland")
+    public void userClickOnPharmacySupportIreland() {
+        driver.navigate().back();
+        waitForExpectedElement(PHARMACY_SUPPORT_IRELAND);
+        clickByElementByQueryJSExecutor(PHARMACY_SUPPORT_IRELAND);
+    }
+
+    @When("user click on Retail ireland")
+    public void userClickOnRetailIreland() {
+        driver.navigate().back();
+        waitForExpectedElement(RETAIL_IRELAND);
+        clickByElementByQueryJSExecutor(RETAIL_IRELAND);
+    }
+
+    @When("user click on Support Office ireland")
+    public void userClickOnSupportOfficeIreland() {
+        driver.navigate().back();
+        waitForExpectedElement(SUPPORT_OFFICE_IRELAND);
+        clickByElementByQueryJSExecutor(SUPPORT_OFFICE_IRELAND);
+    }
+
+    @And("Learning & Development with Find out more CTA")
+    public void learningDevelopmentWithFindOutMoreCTA() {
+        scrollToElement(LEARNING_DEVELOPMENT_IRELAND);
+        assertTrue(isElementDisplayedBySeconds(LEARNING_DEVELOPMENT_IRELAND,5));
+        assertTrue(isElementDisplayedBySeconds(LD_IRELAND_FIND_MORE_CTA,5));
+
+    }
+
+    @And("View Benefits CTA displayed")
+    public void viewBenefitsCTADisplayed() {
+        scrollToElement(VIEW_BENEFIT_IRELAND);
+        assertTrue(isElementDisplayedBySeconds(VIEW_BENEFIT_IRELAND,5));
     }
 }
 
