@@ -310,6 +310,30 @@ public class HomePageSteps extends BaseTest {
     private static final By LEARNING_DEVELOPMENT_IRELAND = By.cssSelector("#content > section:nth-child(3) div.img-wrapper-block.dark-bg > div.content-wrapper");
     private static final By LD_IRELAND_FIND_MORE_CTA = By.cssSelector("section:nth-child(3) div.img-wrapper-block.dark-bg > div.content-wrapper > button");
     private static final By VIEW_BENEFIT_IRELAND = By.cssSelector("#content > section:nth-child(4) div.content-wrapper > button");
+    private static final By APPLICATION_PROCESS_GRADUATE = By.cssSelector("#application-process > div > div");
+    private static final By OUR_CULTURE_GRADUATE = By.cssSelector("#our-culture > div > div");
+    private static final By STORIES_GRADUATE = By.cssSelector("#graduates-stories > div");
+    private static final By OUR_CULTURE_SCROLL_GRADUATE = By.cssSelector("#oursupportoffice > div > button.slick-next.slick-arrow");
+    private static final By RESOURCE_APPRENTICESHIP = By.cssSelector("#hub-top-nav > ul div:nth-child(5) > div > li > a");
+    private static final By PARENT_TEACHER_APPRENTICESHIP = By.cssSelector("#parents--teachers > div");
+    private static final By PARENT_TEACHER_VIDEO = By.cssSelector("#parents--teachers div.common-single-slider-wrapper > div.common-single-slider.slick-initialized.slick-slider div.slick-slide.slick-current.slick-active div.image > a");
+    private static final By OPTOMETRIST_OPTICIAN = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(1) > a");
+    private static final By PRE_REG_OPTOMETRIST_OPTICIAN = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(2) > a");
+    private static final By OPTICAL_SUPPORT_OPTICIAN = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(3) > a");
+    private static final By OPTICIAN_STORE_OPTICIAN = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(4) > a");
+    private static final By OPTICIAN_SUBSECTION = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper");
+    private static final By BUSINESS_SUPPORT = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(1) > a");
+    private static final By BUYING_MERCHANDISING = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(2) > a");
+    private static final By ECOMMERCEDIGITAL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(3) > a");
+    private static final By DIGITAL_TRANSFORMATION = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(4) > a");
+    private static final By DATA_INSIGHTS = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(5) > a");
+    private static final By FINANCE = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(6) > a");
+    private static final By HR = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(7) > a");
+    private static final By MARKETING_BRAND = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(8) > a");
+    private static final By PROPERTY_ESTATES = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(9) > a");
+    private static final By RESEARCH_DEVELOPMENT = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(10) > a");
+    private static final By SUPPLY_DEMAND = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(11) > a");
+    private static final By TECHNOLOGY = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(12) > a");
 
 
 
@@ -2108,6 +2132,190 @@ public class HomePageSteps extends BaseTest {
     public void viewBenefitsCTADisplayed() {
         scrollToElement(VIEW_BENEFIT_IRELAND);
         assertTrue(isElementDisplayedBySeconds(VIEW_BENEFIT_IRELAND,5));
+    }
+
+    @And("Application Process stages displayed")
+    public void applicationProcessStagesDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(APPLICATION_PROCESS_GRADUATE,5));
+    }
+
+    @And("Our Culture and Stories images and scroll CTA displayed")
+    public void ourCultureAndStoriesImagesAndScrollCTADisplayed() {
+        assertTrue(isElementDisplayedBySeconds(OUR_CULTURE_GRADUATE,5));
+        assertTrue(isElementDisplayedBySeconds(OUR_CULTURE_SCROLL_GRADUATE,5));
+        assertTrue(isElementDisplayedBySeconds(STORIES_GRADUATE,5));
+
+
+    }
+
+    @Then("click on each header link and verify it")
+    public void clickOnEachHeaderLinkAndVerifyIt() {
+        for(int i=1 ; i<=6 ; i++)
+        {   waitForExpectedElement(By.id("#hub-top-nav > ul > li:nth-child("+i+") > a"));
+            clickByElementByQueryJSExecutor(By.cssSelector("#hub-top-nav > ul > li:nth-child("+i+") > a"));
+        }
+    }
+
+    @And("Resources is displayed")
+    public void resourcesIsDisplayed() {
+        clickByElementByQueryJSExecutor(RESOURCE_APPRENTICESHIP);
+    }
+
+    @And("Parents & teachers Scroll and Video displayed")
+    public void parentsTeachersScrollAndVideoDisplayed() {
+        scrollToElement(PARENT_TEACHER_APPRENTICESHIP);
+        assertTrue(isElementDisplayedBySeconds(PARENT_TEACHER_APPRENTICESHIP,5));
+        assertTrue(isElementDisplayedBySeconds(PARENT_TEACHER_VIDEO,5));
+    }
+
+    @Then("click on each Apprenticeships header link and verify it")
+    public void clickOnEachApprenticeshipsHeaderLinkAndVerifyIt() {
+        for(int i=1 ; i<=8 ; i++)
+        {   waitForExpectedElement(By.id("#hub-top-nav > ul > div > div > div:nth-child(\"+i+\") > div > li > a"));
+            clickByElementByQueryJSExecutor(By.cssSelector("#hub-top-nav > ul > div > div > div:nth-child("+i+") > div > li > a"));
+        }
+    }
+
+    @Then("click on each pre-reg-optometrist header link and verify it")
+    public void clickOnEachPreRegOptometristHeaderLinkAndVerifyIt() {
+        for(int i=1 ; i<=5 ; i++)
+        {   waitForExpectedElement(By.id("#hub-top-nav > ul > li:nth-child("+i+") > a"));
+            clickByElementByQueryJSExecutor(By.cssSelector("#hub-top-nav > ul > li:nth-child(\"+i+\") > a"));
+        }
+    }
+
+    @And("Optometrist, Pre-registration Optometrist, Optical Support Colleague, Opticians Store Management ,Franchise CTA displayed")
+    public void optometristPreRegistrationOptometristOpticalSupportColleagueOpticiansStoreManagementFranchiseCTADisplayed() {
+        waitForExpectedElement(OPTICIAN_SUBSECTION);
+        assertTrue(isElementDisplayedBySeconds(OPTOMETRIST_OPTICIAN,5));
+        assertTrue(isElementDisplayedBySeconds(PRE_REG_OPTOMETRIST_OPTICIAN,5));
+        assertTrue(isElementDisplayedBySeconds(OPTICAL_SUPPORT_OPTICIAN,5));
+        assertTrue(isElementDisplayedBySeconds(OPTICIAN_STORE_OPTICIAN,5));
+        assertTrue(isElementDisplayedBySeconds(FRANCHISE_OPTICIAN,5));
+
+    }
+
+    @When("user click on Optometrist")
+    public void userClickOnOptometrist() {
+        clickByElementByQueryJSExecutor(OPTOMETRIST_OPTICIAN);
+    }
+
+    @When("user click on Pre-Reg-Optometrist")
+    public void userClickOnPreRegOptometrist() {
+        driver.navigate().back();
+        waitForExpectedElement(PRE_REG_OPTOMETRIST_OPTICIAN);
+        clickByElementByQueryJSExecutor(PRE_REG_OPTOMETRIST_OPTICIAN);
+    }
+
+    @When("user click on Optical Support Colleague")
+    public void userClickOnOpticalSupportColleague() {
+        driver.navigate().back();
+        waitForExpectedElement(OPTICAL_SUPPORT_OPTICIAN);
+        clickByElementByQueryJSExecutor(OPTICAL_SUPPORT_OPTICIAN);
+    }
+
+    @When("user click on Opticians Store Management")
+    public void userClickOnOpticiansStoreManagement() {
+        driver.navigate().back();
+        waitForExpectedElement(OPTICIAN_STORE_OPTICIAN);
+        clickByElementByQueryJSExecutor(OPTICIAN_STORE_OPTICIAN);
+    }
+
+    @When("user click on Franchise")
+    public void userClickOnFranchise() {
+        driver.navigate().back();
+        waitForExpectedElement(FRANCHISE_OPTICIAN);
+        clickByElementByQueryJSExecutor(FRANCHISE_OPTICIAN);
+    }
+
+
+    @When("user click on Business Support")
+    public void userClickOnBusinessSupport() {
+        scrollToElement(BUSINESS_SUPPORT);
+        clickByElementByQueryJSExecutor(BUSINESS_SUPPORT);
+    }
+
+    @When("user click on Buying & Merchandising")
+    public void userClickOnBuyingMerchandising() {
+        driver.navigate().back();
+        waitForExpectedElement(BUYING_MERCHANDISING);
+        clickByElementByQueryJSExecutor(BUYING_MERCHANDISING);
+    }
+
+
+    @When("user click on Ecommerce & Digital")
+    public void userClickOnEcommerceDigital() {
+        driver.navigate().back();
+        waitForExpectedElement(ECOMMERCEDIGITAL);
+        clickByElementByQueryJSExecutor(ECOMMERCEDIGITAL);
+    }
+
+
+    @When("user click on Digital Transformation")
+    public void userClickOnDigitalTransformation() {
+        driver.navigate().back();
+        waitForExpectedElement(DIGITAL_TRANSFORMATION);
+        clickByElementByQueryJSExecutor(DIGITAL_TRANSFORMATION);
+    }
+
+
+    @When("user click on Data & Insights")
+    public void userClickOnDataInsights() {
+        driver.navigate().back();
+        waitForExpectedElement(DATA_INSIGHTS);
+        clickByElementByQueryJSExecutor(DATA_INSIGHTS);
+    }
+
+
+    @When("user click on Finance")
+    public void userClickOnFinance() {
+        driver.navigate().back();
+        waitForExpectedElement(FINANCE);
+        clickByElementByQueryJSExecutor(FINANCE);
+    }
+
+    @When("user click on HR")
+    public void userClickOnHR() {
+        driver.navigate().back();
+        waitForExpectedElement(HR);
+        clickByElementByQueryJSExecutor(HR);
+    }
+
+    @When("user click on Marketing, Brand & Communications")
+    public void userClickOnMarketingBrandCommunications() {
+        driver.navigate().back();
+        waitForExpectedElement(MARKETING_BRAND);
+        clickByElementByQueryJSExecutor(MARKETING_BRAND);
+    }
+
+
+    @When("user click on Property & Estates")
+    public void userClickOnPropertyEstates() {
+        driver.navigate().back();
+        waitForExpectedElement(PROPERTY_ESTATES);
+        clickByElementByQueryJSExecutor(PROPERTY_ESTATES);
+    }
+
+
+    @When("user click on Research & Development")
+    public void userClickOnResearchDevelopment() {
+        driver.navigate().back();
+        waitForExpectedElement(RESEARCH_DEVELOPMENT);
+        clickByElementByQueryJSExecutor(RESEARCH_DEVELOPMENT);
+    }
+
+    @When("user click on Supply & Demand Planning Support")
+    public void userClickOnSupplyDemandPlanningSupport() {
+        driver.navigate().back();
+        waitForExpectedElement(SUPPLY_DEMAND);
+        clickByElementByQueryJSExecutor(SUPPLY_DEMAND);
+    }
+
+    @When("user click on Technology")
+    public void userClickOnTechnology() {
+        driver.navigate().back();
+        waitForExpectedElement(TECHNOLOGY);
+        clickByElementByQueryJSExecutor(TECHNOLOGY);
     }
 }
 

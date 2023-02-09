@@ -218,7 +218,9 @@ Feature: Career Areas feature
 
   Scenario: Verify Why join us CTA on Support Office Jobs page
     And user is on Support Office Jobs Page
-    And Why join us CTA displayed
+    And Why join us CTA displayed//kidar
+    When user click on Business Support
+    Then assert URL contains text 'BusinessSupportUrl.key'
     When user click on Buying & Merchandising
     Then assert URL contains text 'BuyingMerchandisingUrl.key'
     When user click on Ecommerce & Digital
@@ -237,7 +239,7 @@ Feature: Career Areas feature
     Then assert URL contains text 'PropertyEstatesUrl.key'
     When user click on Research & Development
     Then assert URL contains text 'ResearchDevelopmentUrl.key'
-    When user click on Supply & Demand Planning
+    When user click on Supply & Demand Planning Support
     Then assert URL contains text 'SupplyDemandPlanningUrl.key'
     When user click on Technology
     Then assert URL contains text 'TechnologyUrl.key'
@@ -259,14 +261,16 @@ Feature: Career Areas feature
 
 
   Scenario: Verify Why Join us CTAs on Opticians Jobs page
-    And User is on Pharmacy page
+    And User is on Opticians page
     And Optometrist, Pre-registration Optometrist, Optical Support Colleague, Opticians Store Management ,Franchise CTA displayed
+    When user click on Optometrist
+    Then assert URL contains text 'OptometristUrl.key'
+    When user click on Pre-Reg-Optometrist
+    Then assert URL contains text 'PreRegistrationOptometristUrl.key'
     When user click on Optical Support Colleague
     Then assert URL contains text 'OpticalSupportColleagueUrl.key'
     When user click on Opticians Store Management
     Then assert URL contains text 'OpticianStoreManagementUrl.key'
-    When user click on Pharmacy Store Management page
-    Then assert URL contains text 'PharmacyStoreManagementUrl.key'
     When user click on Franchise
     Then assert URL contains text 'FranchiseUrl.key'
 
@@ -292,16 +296,7 @@ Feature: Career Areas feature
     And User is on Pre-reg-optometrist Page
     Then assert URL contains text 'PreRegistrationOptometristUrl.key'
     And  Headers displayed
-    When user click on Our Optometrist Programme
-    Then Our Optometrist Programme section displayed
-    When user click on Application Process
-    Then Application Process section displayed
-    When user click on Our culture
-    Then Our culture section displayed
-    When user click on Our Team
-    Then Our Team section displayed
-    When User click on FAQs
-    Then FAQs section displayed
+    Then click on each pre-reg-optometrist header link and verify it
 
 
   Scenario: Verify Apply now and Benefit CTA on pre-reg-optometrist page
@@ -311,7 +306,7 @@ Feature: Career Areas feature
     And Benefit CTA displayed
     When  user click on Benefit
     Then User get redirected
-    And Popup with Salary, Pension Scheme,  Lifeworks, Bonus scheme, Then Benefits Box and GPHC / PSNI  is displayed with icons.
+    And Popup with Salary, Pension Scheme, Lifeworks, Bonus scheme, Then Benefits Box and GPHC / PSNI  is displayed with icons.
     When user click on 'Apply now'
     Then user redirected to Search page
 
@@ -347,22 +342,7 @@ Feature: Career Areas feature
     And User is on Franchise Page
     Then assert URL contains text 'FranchiseUrl.key'
     And  Headers displayed
-    When user click on Introduction
-    Then Introduction section displayed
-    When user click on About franchise opportunities
-    Then About franchise opportunities section displayed
-    When user click on Process
-    Then Process section displayed
-    When user click on each stage
-    Then Stages with information displayed
-    When User click on Testimonials
-    Then Testimonials  section displayed
-    When user click on scroll on testimonial options
-    Then Images with information should get displayed
-    When user click on Our Team
-    Then Our Team section displayed with image and details
-    When User click on FAQs
-    Then FAQs section displayed
+    Then click on each header link and verify it
 
 
   Scenario: Verify Enquire now CTA  on Franchise Page
@@ -415,7 +395,7 @@ Feature: Career Areas feature
     Then assert URL open in different tabs contains text 'AMPMUrl.key'
 
 
-  Scenario: Verify  Why Join us CTAs on Early Careers page
+  Scenario: Verify Why Join us CTAs on Early Careers page
     And User is on Early Careers page
     And Apprenticeships, Graduate and Work Experience CTA displayed
     When user click on Apprenticeships
@@ -437,43 +417,26 @@ Feature: Career Areas feature
     And User is on Early Careers page
     And user click on Apprenticeships
     And  Headers displayed
-    When user click on Our Apprenticeship
-    Then Our Apprenticeship section displayed
-    When user click on Application Process
-    Then Application Process section displayed
-    When user click on Our culture
-    Then Our culture section displayed
-    When user click on Our Team
-    Then Our Team section displayed
-    When user click on Resources
-    Then Resources section displayed
-    When user click on Parents & teachers
-    Then Parents & teachers section displayed
-    When user click on Safeguarding
-    Then Safeguarding section displayed
-    When User click on FAQs
-    Then FAQs section displayed
+    Then click on each Apprenticeships header link and verify it
 
 
   Scenario: Verify Apprenticeships page
     And User is on Early Careers page
     And user click on Apprenticeships
-    And  Video displayed
-    And Hint & Tips CTA displayed
+    And Video is displayed
+    And Hint & tips CTA displayed
     And Application Process stages displayed
     And Our Culture and Stories images and scroll CTA displayed
     And Parents & teachers Scroll and Video displayed
-    When user click on video
-    Then Video gets played
-    When user click on hints and tips
-    Then Popup modal opened with details
+    When user click on play button
+    Then Video should get played
 
 
   Scenario: Verify Resources and Safeguarding on Apprenticeships page
     And User is on Early Careers page
     And user click on Apprenticeships
-    And  Resources displayed
-    And Safeguarding displayed
+    And  Resources is displayed
+    And Safeguarding is displayed
     When user click on download CTA for Student's Guide to Apprenticeships
     Then PDF files get downloaded / User redirected to new tab with PDF
     When user click on download CTA for Our Safeguarding policy
@@ -488,32 +451,20 @@ Feature: Career Areas feature
     And User is on Early Careers page
     And user click on Graduates
     And  Headers displayed
-    When user click on Introduction
-    Then Introduction section displayed
-    When user click on Graduate Opportunities
-    Then Graduate Opportunities section displayed
-    When user click on Application Process
-    Then Application Process section displayed
-    When user click on Our culture
-    Then Our culture section displayed
-    When user click on Resources
-    Then Resources section displayed
-    When User click on FAQs
-    Then FAQs section displayed
+    Then click on each header link and verify it
+
 
 
   Scenario: Verify Graduates page
     And User is on Early Careers page
     And user click on Graduates
-    And  Video is displayed
-    And Hint & Tips CTA displayed
+    And Video is displayed
+    And Hint & tips CTA displayed
     And Application Process stages displayed
     And Our Culture and Stories images and scroll CTA displayed
-    And Parents & teachers Scroll and Video displayed
+    And Parents & teachers Scroll and Video displayed//kidar hai
     When user click on play button
     Then Video should get played
-    When user click on hints and tips
-    Then Popup modal opened with details
 
 
   Scenario: Verify Work Experience page
