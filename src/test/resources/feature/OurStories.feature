@@ -1,4 +1,4 @@
-FeatureOur stories feature
+Feature: Our stories feature
 
   Background: Navigate to Boots homePage
     Given User is on Boots Home page
@@ -54,7 +54,7 @@ FeatureOur stories feature
     When user click on Twitter icon
     Then assert URL open in different tabs contains text 'TwitterUrl.key'
     When user click on Email Icon
-    #Then assert URL open in different tabs contains text 'TwitterUrl.key'
+
 
 
   Scenario: Search job on click on stories  .// no idea need clarity

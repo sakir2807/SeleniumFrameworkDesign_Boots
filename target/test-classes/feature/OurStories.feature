@@ -1,4 +1,4 @@
-FeatureOur stories feature
+Feature: Our stories feature
 
   Background: Navigate to Boots homePage
     Given User is on Boots Home page

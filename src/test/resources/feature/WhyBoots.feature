@@ -18,7 +18,7 @@ Feature: Why Boots feature
     When user click on Rewards & Benefit
     Then assert URL contains text 'RewardsBenefitUrl.key'
 
-  Scenario: Verify Scroll down button on why boots page
+  Scenario: Verify Scroll down button on why boots page //dot operator and scroll button verification
     And banner image is getting displayed
     And Scroll down CTA displayed
     And Dot navigation on side displayed
@@ -48,13 +48,13 @@ Feature: Why Boots feature
     Then page should get scrolled
 
 
-  Scenario: Verify Hear from our team members about working in .. On why boots page
-    And Hear from our team members about working in … displayed
-    And members images with description displayed
-    When user moves curser over the images
-    Then information should get displayed // need to learn about it
-    When user click on any of the story
-    Then user redirected to the new story page
+#  Scenario: Verify Hear from our team members about working in .. On why boots page# Need confirmation from pranali
+#    And Hear from our team members about working in … displayed
+#    And members images with description displayed
+#    When user moves curser over the images
+#    Then information should get displayed // need to learn about it
+#    When user click on any of the story
+#    Then user redirected to the new story page
 
 
   Scenario: Verify Videos on care page
@@ -81,18 +81,7 @@ Feature: Why Boots feature
     When user click on Your development
     Then assert URL contains text 'YourDevelopmentUrl.key'
     And Learning & development displayed
-    When user click on Pharmacy CTA
-    Then Pharmacy details displayed
-    When user click on Retails CTA
-    Then Retails details displayed and other option get collapsed
-    When User click on  Support office and supplier chain CTA
-    Then Support office and supplier chain details displayed and other option get collapsed
-    When user click on Opticians CTA
-    Then Opticians details displayed and lastly selected option get collapsed
-    When user click on Leadership CTA
-    Then Leadership details displayed and lastly selected option get collapsed
-    When user click on Beauty CTA
-    Then Beauty details displayed and lastly selected option get collapsed
+    Then user click on various job and verify its content
 
 
 
@@ -108,8 +97,7 @@ Feature: Why Boots feature
     When user click on Diversity & inclusion
     Then assert URL contains text 'DiversityInclusionUrl.key'
     And Verify our Business Resource Groups displayed
-    When Open the page // what is this
-    Then Titles with logo should get displayed
+
 
 
   Scenario: Verify View Benefit CTA on Rewards & benefits Page

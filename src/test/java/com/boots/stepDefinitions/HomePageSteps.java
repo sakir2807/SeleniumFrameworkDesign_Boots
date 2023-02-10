@@ -334,6 +334,8 @@ public class HomePageSteps extends BaseTest {
     private static final By RESEARCH_DEVELOPMENT = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(10) > a");
     private static final By SUPPLY_DEMAND = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(11) > a");
     private static final By TECHNOLOGY = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(12) > a");
+    private static final By NEXT_STORY_DISPLAY = By.cssSelector("section.section-slider-container div.section-slider-widget.slick-initialized.slick-slider div.slick-slide:nth-child(3)");
+    private static final By PREVIOUS_STORY_DISPLAY = By.cssSelector("section.section-slider-container div.section-slider-widget.slick-initialized.slick-slider div.slick-slide:nth-child(2)");
 
 
 
@@ -951,7 +953,15 @@ public class HomePageSteps extends BaseTest {
 
     @When("check for parameters displayed")
     public void checkForParametersDisplayed() {
-        //need to check for what data need to verify
+        assertTrue(isElementDisplayedBySeconds(JOB_FILTER_KEYWORD,5));
+        assertTrue(isElementDisplayedBySeconds(JOB_FILTER_TOWN,5));
+        assertTrue(isElementDisplayedBySeconds(JOB_FILTER_DISTANCE,5));
+        assertTrue(isElementDisplayedBySeconds(JOB_FILTER_REFERENCE,5));
+        assertTrue(isElementDisplayedBySeconds(JOB_FILTER_BUSINESS_AREA,5));
+        assertTrue(isElementDisplayedBySeconds(JOB_FILTER_FUNCTIONAL_AREA,5));
+        assertTrue(isElementDisplayedBySeconds(JOB_FILTER_FULL_PART_TIME,5));
+        assertTrue(isElementDisplayedBySeconds(JOB_FILTER_CONTRACT,5));
+
 
     }
 
@@ -2316,6 +2326,26 @@ public class HomePageSteps extends BaseTest {
         driver.navigate().back();
         waitForExpectedElement(TECHNOLOGY);
         clickByElementByQueryJSExecutor(TECHNOLOGY);
+    }
+
+    @Then("Next story image with details displayed")
+    public void nextStoryImageWithDetailsDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(NEXT_STORY_DISPLAY,5));
+    }
+
+    @Then("Previous story with details displayed")
+    public void previousStoryWithDetailsDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(PREVIOUS_STORY_DISPLAY,5));
+    }
+
+    @Then("user click on various job and verify its content")
+    public void userClickOnVariousJobAndVerifyItsContent() {
+       waitForExpectedElement(PHARMACY_LD);
+        for(int i=1; i<=6; i++)
+        {
+            clickByElementByQueryJSExecutor(By.id("section.programmes-container div.programmes-navigation-wrapper > div:nth-child("+i+")"));
+            assertTrue(isElementDisplayedBySeconds(PHARMACY_LD_DESCRIPTION,5));
+        }
     }
 }
 
