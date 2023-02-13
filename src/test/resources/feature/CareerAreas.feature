@@ -11,12 +11,11 @@ Feature: Career Areas feature
     And Share page dropdown displayed
     When user click on Current Vacancies CTA
     Then assert URL contains text 'SearchJobsUrl.key'
-    When user Click on Share page Dropdown with social media links displayed  #explanation needed
 
 
   Scenario: Verify Why Join us CTAs on Retail Jobs page
     And User is on Retail page
-    When user click on Customer advisor option  # Need idea how to deal with multi list drop down
+    When user click on Customer advisor option
     Then assert URL contains text 'CustomerAdvisorUrl.key'
     When user click on Beauty specialist
     Then assert URL contains text 'BeautySpecialistUrl.key'
@@ -45,8 +44,6 @@ Feature: Career Areas feature
     And User is on customer-advisor
     And Current Vacancies displayed
     And Share page dropdown displayed
-    When user click on Current Vacancies CTA
-    Then assert URL contains text 'SearchJobsUrl.key'
     When user Click on Share page Dropdown with social media links displayed
 
 
@@ -79,7 +76,7 @@ Feature: Career Areas feature
 
   Scenario: Verify Why Join us CTAs on Pharmacy Jobs page
     And User is on Pharmacy page
-    When user click on Pharmacist
+    And User is on Pharmacist page
     Then assert URL contains text 'PharmacistUrl.key'
     When user click on Pharmacist - newly qualified
     Then assert URL contains text 'PharmacistNewlyQualifiedUrl.key'
@@ -89,7 +86,7 @@ Feature: Career Areas feature
     Then assert URL contains text 'TraineePharmacistUrl.key'
     When user click on Pharmacy Store Management
     Then assert URL contains text 'PharmacyStoreManagementUrl.key'
-    When user click on Locum Pharmacist
+    When user click on Locum Pharmacist option
     Then assert URL contains text 'LocumPharmacistUrl.key'
 
 
@@ -124,7 +121,7 @@ Feature: Career Areas feature
     And User is on Pharmacist page
     And Discover your path today displayed with CTA Let's start displayed
     And Relocate with us CTA displayed
-    And Chat with us CTA displayed# chatting window
+    And Chat with us CTA displayed
     When user click Let's start CTA
     Then User getting moved to different modal at footer
     When user click on relocate with us
@@ -200,7 +197,7 @@ Feature: Career Areas feature
     #Then Video should get played# Not present
 
 
-#  Scenario: Verify Discover your path today on pharmacy-store-management // not prsent
+#  Scenario: Verify Discover your path today on pharmacy-store-management // not present
 #    And User is on Pharmacy page
 #    And User is on Pharmacy-store-management
 #    And  Our Culture displayed #Kidar hai ya
@@ -218,7 +215,7 @@ Feature: Career Areas feature
 
   Scenario: Verify Why join us CTA on Support Office Jobs page
     And user is on Support Office Jobs Page
-    And Why join us content displayed // need to script
+    And Why join us content displayed
     When user click on Business Support
     Then assert URL contains text 'BusinessSupportUrl.key'
     When user click on Buying & Merchandising
@@ -304,10 +301,10 @@ Feature: Career Areas feature
     And User is on Pre-reg-optometrist Page
     And Apply now CTA displayed
     And Benefit CTA displayed
-    When  user click on Benefit
-    Then user get informatve popup
-    When user click on 'Apply now'
-    Then user redirected to Search page//tab switch
+    When user click on Benefit CTA
+    Then user get informative popup
+    When user click on Apply now
+    Then assert URL open in different tabs contains text 'SearchJobsUrl.key'
 
 
   Scenario: Verify Application process in pre-reg-optometrist page
@@ -322,10 +319,9 @@ Feature: Career Areas feature
   Scenario: Verify Our culture pre-reg-optometrist page
     And User is on Opticians page
     And User is on Pre-reg-optometrist Page
-    When user click on Our Culture content
-    Then images with information displayed
-    When user click on Optician stories//own story click
-    Then images with information displayed
+    Then user click on Our Culture and verify content
+    Then user click on Optician stories and verify content
+
 
 
   Scenario: Verify Hint & Tips CTA on pre-reg-optometrist page
@@ -451,7 +447,6 @@ Feature: Career Areas feature
     And user click on Graduates
     And  Headers displayed
     Then click on each header link and verify it
-
 
 
   Scenario: Verify Graduates page

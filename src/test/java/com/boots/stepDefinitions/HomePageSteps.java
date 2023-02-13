@@ -336,6 +336,19 @@ public class HomePageSteps extends BaseTest {
     private static final By TECHNOLOGY = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(12) > a");
     private static final By NEXT_STORY_DISPLAY = By.cssSelector("section.section-slider-container div.section-slider-widget.slick-initialized.slick-slider div.slick-slide:nth-child(3)");
     private static final By PREVIOUS_STORY_DISPLAY = By.cssSelector("section.section-slider-container div.section-slider-widget.slick-initialized.slick-slider div.slick-slide:nth-child(2)");
+    private static final By OUR_CULTURE_CONTENT = By.cssSelector("#whybootsopticians div.slick-slide.slick-current.slick-active div.para");
+    private static final By OUR_CULTURE_IMAGE = By.cssSelector("#whybootsopticians div.slick-slide.slick-current.slick-active div.image");
+    private static final By OUR_CULTURE_SCROLL = By.cssSelector("#whybootsopticians > div > button.slick-next.slick-arrow");
+    private static final By OPTICIAN_STORIES_CONTENT = By.cssSelector("#opticians-stories div.pill-controlled-slider-box > div.pill-controlled-slider div:nth-child(2) > div > div >div.common-slider-para > p:nth-child(1)");
+    private static final By OPTICIAN_STORIES_IMAGE = By.cssSelector("#opticians-stories div.pill-controlled-slider-box > div.pill-controlled-slider > div > div > div:nth-child(2)  div.image > div.slide-image-wrapper > img");
+    private static final By OPTICIAN_STORIES_SCROLL = By.cssSelector("#opticians-stories div.pill-controlled-slider-box > div.pill-controlled-slider > button.slick-next.slick-arrow");
+    private static final By APPLY_NOW_OPTOMETRIST_PROGRAMME = By.cssSelector("#our-optometrist-programme div.schemes-details-wrapper > div > a");
+    private static final By BENEFIT_OPTOMETRIST_PROGRAMME = By.cssSelector("#our-optometrist-programme div.schemes-details-wrapper > div > div.hub-popups > a");
+    private static final By BENEFIT_POPUP = By.cssSelector("#benefits > div > div.stage-thumb");
+    private static final By POPUP_CLOSE = By.cssSelector("#benefits > button");
+    private static final By WHY_JOIN_US_CONTENT = By.cssSelector("#content > section.why-join-us");
+    private static final By CHAT_WINDOW = By.cssSelector("body div.start-group.chrome.no-clip-path.moveFromRight-enter-done > div.chat-header");
+    private static final By SOCIAL_MEDIA_LINK_OPTIONS = By.cssSelector("#content > section.navigation-header.row > div.career-head-wrapper button");
 
 
 
@@ -2346,6 +2359,115 @@ public class HomePageSteps extends BaseTest {
             clickByElementByQueryJSExecutor(By.id("section.programmes-container div.programmes-navigation-wrapper > div:nth-child("+i+")"));
             assertTrue(isElementDisplayedBySeconds(PHARMACY_LD_DESCRIPTION,5));
         }
+    }
+
+    @When("user click on Our Culture and verify content")
+    public void userClickOnOurCultureAndVerifyContent() {
+        scrollToElement(OUR_CULTURE_CONTENT);
+        assertTrue(isElementDisplayedBySeconds(OUR_CULTURE_CONTENT,5));
+        assertTrue(isElementDisplayedBySeconds(OUR_CULTURE_IMAGE,5));
+        assertTrue(isElementDisplayedBySeconds(OUR_CULTURE_SCROLL,5));
+
+    }
+
+    @Then("user click on Optician stories and verify content")
+    public void userClickOnOpticianStoriesAndVerifyContent() {
+        scrollToElement(OPTICIAN_STORIES_CONTENT);
+        assertTrue(isElementDisplayedBySeconds(OPTICIAN_STORIES_CONTENT,5));
+        assertTrue(isElementDisplayedBySeconds(OPTICIAN_STORIES_IMAGE,5));
+        assertTrue(isElementDisplayedBySeconds(OPTICIAN_STORIES_SCROLL,5));
+    }
+
+    @And("Apply now CTA displayed")
+    public void applyNowCTADisplayed() {
+        assertTrue(isElementDisplayedBySeconds(APPLY_NOW_OPTOMETRIST_PROGRAMME,5));
+    }
+
+    @And("Benefit CTA displayed")
+    public void benefitCTADisplayed() {
+        assertTrue(isElementDisplayedBySeconds(BENEFIT_OPTOMETRIST_PROGRAMME,5));
+    }
+
+    @Then("user get informative popup")
+    public void userGetInformativePopup() {
+        waitForExpectedElement(BENEFIT_POPUP);
+        assertTrue(isElementDisplayedBySeconds(BENEFIT_POPUP,5));
+        clickByElementByQueryJSExecutor(POPUP_CLOSE);
+    }
+
+    @When("user click on Benefit CTA")
+    public void userClickOnBenefitCTA() {
+        clickByElementByQueryJSExecutor(BENEFIT_OPTOMETRIST_PROGRAMME);
+    }
+
+    @When("user click on Apply now")
+    public void userClickOnApplyNow() {
+        clickByElementByQueryJSExecutor(APPLY_NOW_OPTOMETRIST_PROGRAMME);
+    }
+
+    @And("Why join us content displayed")
+    public void whyJoinUsContentDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(WHY_JOIN_US_CONTENT,5));
+    }
+
+    @And("Chat with us CTA displayed")
+    public void chatWithUsCTADisplayed() {
+        scrollToElement(RELOCATE_WITH_US_CTA_PHARMACIST);
+        driver.switchTo().frame("tidio-chat-iframe");
+        assertTrue(isElementDisplayedBySeconds(CHAT_WINDOW,5));
+    }
+
+    @When("user click on Pharmacist - newly qualified")
+    public void userClickOnPharmacistNewlyQualified() {
+        driver.navigate().back();
+        waitForExpectedElement(PHARMACIST_NEWLY_PHARMACY);
+        clickByElementByQueryJSExecutor(PHARMACIST_NEWLY_PHARMACY);
+    }
+
+    @When("user click on Pharmacy Support")
+    public void userClickOnPharmacySupport() {
+        driver.navigate().back();
+        waitForExpectedElement(PHARMACY_SUPPORT_PHARMACY);
+        clickByElementByQueryJSExecutor(PHARMACY_SUPPORT_PHARMACY);
+    }
+
+    @When("user click on Trainee Pharmacist")
+    public void userClickOnTraineePharmacist() {
+        driver.navigate().back();
+        waitForExpectedElement(TRAINEE_PHARMACIST_PHARMACY);
+        clickByElementByQueryJSExecutor(TRAINEE_PHARMACIST_PHARMACY);
+    }
+
+    @When("user click on Pharmacy Store Management")
+    public void userClickOnPharmacyStoreManagement() {
+        driver.navigate().back();
+        waitForExpectedElement(PHARMACY_STORE_PHARMACY);
+        clickByElementByQueryJSExecutor(PHARMACY_STORE_PHARMACY);
+    }
+
+    @When("user click on Locum Pharmacist option")
+    public void userClickOnLocumPharmacistOption() {
+        driver.navigate().back();
+        waitForExpectedElement(LOCUM_PHARMACIST_PHARMACY);
+        clickByElementByQueryJSExecutor(LOCUM_PHARMACIST_PHARMACY);
+    }
+
+    @When("user Click on Share page Dropdown with social media links displayed")
+    public void userClickOnSharePageDropdownWithSocialMediaLinksDisplayed() {
+        waitForExpectedElement(SOCIAL_MEDIA_LINK_OPTIONS);
+        assertTrue(isElementDisplayedBySeconds(SOCIAL_MEDIA_LINK_OPTIONS,5));
+        hoverOnElement(SOCIAL_MEDIA_LINK_OPTIONS);
+        for(int i=1; i<=5; i++)
+        {
+            assertTrue(isElementDisplayedBySeconds(By.cssSelector("#st-1 > div:nth-child("+i+")"),5));
+        }
+    }
+
+    @When("user enters keyword, Town")
+    public void userEntersKeywordTown() {
+        scrollToPageBottom();
+        scrollToElement(SEARCH_JOB_LOCATION_STORY);
+        enterDataAndWait(SEARCH_JOB_LOCATION_STORY,"London");
     }
 }
 

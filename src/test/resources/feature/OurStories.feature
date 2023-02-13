@@ -57,10 +57,9 @@ Feature: Our stories feature
 
 
 
-  Scenario: Search job on click on stories  .// no idea need clarity
-    And Search CTA displayed
+  Scenario: Search job on click on stories
+    And Select one story
     When user enters keyword, Town
     And Click on Search CTA
-    And User redirected to search page
-    And Search results should get displayed
-    And Selected criteria must be prepopulated on search filters
+    Then assert URL contains text 'SearchJobsUrl.key'
+    Then Result are display accordingly
