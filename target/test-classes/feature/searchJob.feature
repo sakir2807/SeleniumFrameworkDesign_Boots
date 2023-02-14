@@ -8,7 +8,7 @@ Feature: Boots Search Job
 
   Scenario: Verify Search Job with Parameters
     And Search jobs filters are displayed
-    #When check for parameters displayed
+    When check for parameters displayed
     Then select distance is not clickable
     Then enter town, city or postcode option now select distance is clickable
 
@@ -96,7 +96,6 @@ Feature: Boots Search Job
     Then Result with no filter display
     And Page number displayed
     When click on the page number
-    #Then user redirected to search results page
 
 
   Scenario: Verify redirection on Boots logo

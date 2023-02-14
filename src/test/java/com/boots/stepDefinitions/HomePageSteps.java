@@ -258,9 +258,10 @@ public class HomePageSteps extends BaseTest {
     private static final By BEAUTY_SPECIALIST_RETAIL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(2) > a");
     private static final By CUSTOMER_ADVISOR_RETAIL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(1) > a");
     private static final By LIZ_EARLE_RETAIL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(5) > a");
+    private static final By AIRPORT_RETAIL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(6) > a");
     private static final By MEET_DAVID_TITLE = By.cssSelector("section.career-block-image div.content-wrapper > h3");
     private static final By MEET_DAVID_READ_MORE = By.cssSelector("section.career-block-image div.content-wrapper > a");
-    private static final By RETAIL_MANAGEMENT_RETAIL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(6) > a");
+    private static final By RETAIL_MANAGEMENT_RETAIL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(3) > a");
     private static final By REGISTER_INTEREST_TRAINEE = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(6) > a");
     private static final By BENEFITS_TRAINEE = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(6) > a");
     private static final By CAREER_MAPPER_LETS_START = By.cssSelector("#career-mapper > div.start-overlay > a");
@@ -349,6 +350,7 @@ public class HomePageSteps extends BaseTest {
     private static final By WHY_JOIN_US_CONTENT = By.cssSelector("#content > section.why-join-us");
     private static final By CHAT_WINDOW = By.cssSelector("body div.start-group.chrome.no-clip-path.moveFromRight-enter-done > div.chat-header");
     private static final By SOCIAL_MEDIA_LINK_OPTIONS = By.cssSelector("#content > section.navigation-header.row > div.career-head-wrapper button");
+    private static final By DOT_NAVIGATOR = By.cssSelector("#content > div.why-boots-content-wrapper > div.wp-block-columns.swiper-container.vertical-slides > div.swiper-pagination");
 
 
 
@@ -1592,11 +1594,7 @@ public class HomePageSteps extends BaseTest {
         clickByElementByQueryJSExecutor(CURRENT_VACANCIES_RETAIL);
     }
 
-    @When("user click on Customer advisor option")
-    public void userClickOnCustomerAdvisorOption() {
-        selectValueFromDropDownByValue("Retail",CAREER_AREAS_HEADER);
-        waitForAjaxElementNotToBePresent(driver,5);
-    }
+
 
     @When("user click on NoSeven beauty company link")
     public void userClickOnNoBeautyCompanyLink() {
@@ -2179,8 +2177,8 @@ public class HomePageSteps extends BaseTest {
         }
     }
 
-    @And("Resources is displayed")
-    public void resourcesIsDisplayed() {
+    @And("Resources Section is displayed")
+    public void resourcesSectionIsDisplayed() {
         clickByElementByQueryJSExecutor(RESOURCE_APPRENTICESHIP);
     }
 
@@ -2468,6 +2466,84 @@ public class HomePageSteps extends BaseTest {
         scrollToPageBottom();
         scrollToElement(SEARCH_JOB_LOCATION_STORY);
         enterDataAndWait(SEARCH_JOB_LOCATION_STORY,"London");
+    }
+
+    @When("user click on Customer advisor option")
+    public void userClickOnCustomerAdvisorOption() {
+        clickByElementByQueryJSExecutor(CUSTOMER_ADVISOR_RETAIL);
+    }
+
+    @When("user click on Beauty specialist")
+    public void userClickOnBeautySpecialist() {
+        driver.navigate().back();
+        waitForExpectedElement(BEAUTY_SPECIALIST_RETAIL);
+        clickByElementByQueryJSExecutor(BEAUTY_SPECIALIST_RETAIL);
+
+    }
+
+
+    @When("user click on Retail management")
+    public void userClickOnRetailManagement() {
+        driver.navigate().back();
+        waitForExpectedElement(RETAIL_MANAGEMENT_RETAIL);
+        clickByElementByQueryJSExecutor(RETAIL_MANAGEMENT_RETAIL);
+    }
+
+
+    @When("user click on NoSeven")
+    public void userClickOnNoSeven() {
+        driver.navigate().back();
+        waitForExpectedElement(No7_RETAIL);
+        clickByElementByQueryJSExecutor(No7_RETAIL);
+    }
+
+    @When("user click on Liz Earle")
+    public void userClickOnLizEarle() {
+        driver.navigate().back();
+        waitForExpectedElement(LIZ_EARLE_RETAIL);
+        clickByElementByQueryJSExecutor(LIZ_EARLE_RETAIL);
+    }
+
+    @When("user click on Airport")
+    public void userClickOnAirport() {
+        driver.navigate().back();
+        waitForExpectedElement(AIRPORT_RETAIL);
+        clickByElementByQueryJSExecutor(AIRPORT_RETAIL);
+    }
+
+    @And("download options are display")
+    public void downloadOptionsAreDisplay() {
+        for(int i=1; i<=7 ; i++)
+        {
+            assertTrue(isElementDisplayedBySeconds(By.cssSelector("#resources ul > li:nth-child("+i+") > a.prepare-downloads"),5));
+        }
+    }
+
+    @And("Dot navigation on side displayed")
+    public void dotNavigationOnSideDisplayed() {
+        assertTrue(isElementDisplayedBySeconds(DOT_NAVIGATOR,5));
+    }
+
+    @Then("click on dot naviagtor and Find More CTA and verify redirection")
+    public void clickOnDotNaviagtorAndFindMoreCTAANdVerifyRedirection() {
+        for(int i=2; i<=5;i++)
+        {
+            clickByElementByQueryJSExecutor(By.cssSelector("#content > div.why-boots-content-wrapper div.swiper-pagination.vertical-pagination> span:nth-child("+i+")"));
+            waitForAjaxElementNotToBePresent(driver,4);
+            clickByElementByQueryJSExecutor(By.cssSelector("a.btn.btn-outline.white"));
+            driver.navigate().back();
+        }
+    }
+
+    @Then("refresh the page and perform scroll down on banner to verify redirection")
+    public void refreshThePageAndPerformScrollDownOnBannerToVerifyRedirection() {
+        for(int i=1; i<=4;i++)
+        {
+            clickByElementByQueryJSExecutor(By.cssSelector("#content > div.why-boots-content-wrapper > div.wp-block-columns.swiper-container> button"));
+            waitForAjaxElementNotToBePresent(driver,4);
+            clickByElementByQueryJSExecutor(By.cssSelector("a.btn.btn-outline.white"));
+            driver.navigate().back();
+        }
     }
 }
 

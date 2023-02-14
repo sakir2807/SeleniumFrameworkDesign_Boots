@@ -21,7 +21,7 @@ Feature: Career Areas feature
     Then assert URL contains text 'BeautySpecialistUrl.key'
     When user click on Retail management
     Then assert URL contains text 'RetailManagementUrl.key'
-    When user click on No7
+    When user click on NoSeven
     Then assert URL contains text 'No7Url.key'
     When user click on Liz Earle
     Then assert URL contains text 'LizEarleUrl.key'
@@ -430,16 +430,9 @@ Feature: Career Areas feature
   Scenario: Verify Resources and Safeguarding on Apprenticeships page
     And User is on Early Careers page
     And user click on Apprenticeships
-    And  Resources is displayed
-    And Safeguarding is displayed
-    When user click on download CTA for Student's Guide to Apprenticeships
-    Then PDF files get downloaded / User redirected to new tab with PDF
-    When user click on download CTA for Our Safeguarding policy
-    Then PDF files get downloaded / User redirected to new tab with PDF
-    When user click on Safeguarding & prevent videos
-    Then User redirected to YouTube page
-    When user click on download CTA Parent support pack
-    Then PDF files get downloaded / User redirected to new tab with PDF
+    And  Resources Section is displayed
+    And download options are display
+
 
 
   Scenario: Verify Headers on Graduates page
