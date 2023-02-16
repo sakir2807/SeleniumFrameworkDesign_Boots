@@ -18,34 +18,13 @@ Feature: Why Boots feature
     When user click on Rewards & Benefit
     Then assert URL contains text 'RewardsBenefitUrl.key'
 
+
   Scenario: Verify Scroll down button on why boots page //dot operator and scroll button verification
     And banner image is getting displayed
     And Scroll down CTA displayed
     And Dot navigation on side displayed
-    When user click on Dot navigation button
-    Then Banner image changed
-    When user click on scroll down button
-    Then Banner image changed
-    When user scroll down
-    Then banner image getting displayed as 'Hello curious'
-    When Again user click on scroll down button
-    Then We care about communities banner displayed
-    When user click on Find out more
-    Then assert URL contains text 'CareUrl.key'
-    When again user click on scroll down button
-    Then We care about our team banner displayed
-    When user click on Find out more
-    Then assert URL contains text 'YourDevelopmentUrl.key'
-    When again user click on scroll down button
-    Then We care about diversity banner displayed
-    When user click on Find out more
-    Then assert URL contains text 'DiversityInclusionUrl.key'
-    When again user click on scroll down button
-    Then We care about you banner displayed
-    When user click on Find out more
-    Then assert URL contains text 'DiversityInclusionUrl.key'
-    When user click on the Dots on right
-    Then page should get scrolled
+    Then click on dot naviagtor and Find More CTA and verify redirection
+    Then refresh the page and perform scroll down on banner to verify redirection
 
 
 #  Scenario: Verify Hear from our team members about working in .. On why boots page# Need confirmation from pranali
@@ -84,7 +63,6 @@ Feature: Why Boots feature
     Then user click on various job and verify its content
 
 
-
   Scenario: Verify Videos on diversity-inclusion page
     When user click on Diversity & inclusion
     Then assert URL contains text 'DiversityInclusionUrl.key'
@@ -99,13 +77,11 @@ Feature: Why Boots feature
     And Verify our Business Resource Groups displayed
 
 
-
   Scenario: Verify View Benefit CTA on Rewards & benefits Page
     And user is on Rewards & benefits page
     And View Benefit CTA displayed
     When user click on View Benefit CTA
     Then Icons, Titles with details displayed
-
 
 
   Scenario: Verify Videos on Rewards & benefits Page

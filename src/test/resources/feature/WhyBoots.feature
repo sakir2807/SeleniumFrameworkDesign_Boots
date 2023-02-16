@@ -17,7 +17,7 @@ Feature: Why Boots feature
     Then assert URL contains text 'DiversityInclusionUrl.key'
     When user click on Rewards & Benefit
     Then assert URL contains text 'RewardsBenefitUrl.key'
-    
+
 
   Scenario: Verify Scroll down button on why boots page //dot operator and scroll button verification
     And banner image is getting displayed

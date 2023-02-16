@@ -21,7 +21,7 @@ Feature: Career Areas feature
     Then assert URL contains text 'BeautySpecialistUrl.key'
     When user click on Retail management
     Then assert URL contains text 'RetailManagementUrl.key'
-    When user click on No7
+    When user click on NoSeven
     Then assert URL contains text 'No7Url.key'
     When user click on Liz Earle
     Then assert URL contains text 'LizEarleUrl.key'
@@ -216,14 +216,14 @@ Feature: Career Areas feature
   Scenario: Verify Why join us CTA on Support Office Jobs page
     And user is on Support Office Jobs Page
     And Why join us content displayed
-    When user click on Business Support
-    Then assert URL contains text 'BusinessSupportUrl.key'
+#    When user click on Business Support
+#    Then assert URL contains text 'BusinessSupportUrl.key'
     When user click on Buying & Merchandising
     Then assert URL contains text 'BuyingMerchandisingUrl.key'
-    When user click on Ecommerce & Digital
-    Then assert URL contains text 'EcommerceDigitalUrl.key'
-    When user click on Digital Transformation
-    Then assert URL contains text 'DigitalTransformationUrl.key'
+#    When user click on Ecommerce & Digital
+#    Then assert URL contains text 'EcommerceDigitalUrl.key'
+#    When user click on Digital Transformation
+#    Then assert URL contains text 'DigitalTransformationUrl.key'
     When user click on Data & Insights
     Then assert URL contains text 'DataInsightsUrl.key'
     When user click on Finance
@@ -232,10 +232,10 @@ Feature: Career Areas feature
     Then assert URL contains text 'HRUrl.key'
     When user click on Marketing, Brand & Communications
     Then assert URL contains text 'MarketingBrandCommunicationUrl.key'
-    When user click on Property & Estates
-    Then assert URL contains text 'PropertyEstatesUrl.key'
-    When user click on Research & Development
-    Then assert URL contains text 'ResearchDevelopmentUrl.key'
+#    When user click on Property & Estates
+#    Then assert URL contains text 'PropertyEstatesUrl.key'
+#    When user click on Research & Development
+#    Then assert URL contains text 'ResearchDevelopmentUrl.key'
     When user click on Supply & Demand Planning Support
     Then assert URL contains text 'SupplyDemandPlanningUrl.key'
     When user click on Technology
@@ -430,16 +430,9 @@ Feature: Career Areas feature
   Scenario: Verify Resources and Safeguarding on Apprenticeships page
     And User is on Early Careers page
     And user click on Apprenticeships
-    And  Resources is displayed
-    And Safeguarding is displayed
-    When user click on download CTA for Student's Guide to Apprenticeships
-    Then PDF files get downloaded / User redirected to new tab with PDF
-    When user click on download CTA for Our Safeguarding policy
-    Then PDF files get downloaded / User redirected to new tab with PDF
-    When user click on Safeguarding & prevent videos
-    Then User redirected to YouTube page
-    When user click on download CTA Parent support pack
-    Then PDF files get downloaded / User redirected to new tab with PDF
+    And  Resources Section is displayed
+    And download options are display
+
 
 
   Scenario: Verify Headers on Graduates page

@@ -189,6 +189,18 @@ public class BaseTest {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("arguments[0].scrollIntoView()", waitForExpectedElement(by));
 		jse.executeScript("arguments[0].click()",waitForExpectedElement(by));
+
+
+	}
+
+	public void clickByElementByQueryJSExecutorChange(final By by) {
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.presenceOfElementLocated(by));
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("arguments[0].scrollIntoView()", waitForExpectedElement(by));
+		jse.executeScript("arguments[0].click()",waitForExpectedElement(by));
+		jse.executeScript("arguments[0].change()",waitForExpectedElement(by));
+
 	}
 
 	public boolean invisibilityOfElementLocated(By by, Duration duration) {
@@ -223,6 +235,19 @@ public class BaseTest {
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".loading-mask")));
 			} }catch (Exception e) {
 			LOG.info("Ajax loading class no longer present");
+		}
+	}
+
+	public void clickFirstElementByQueryJSExecutor(final By by) {
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.presenceOfElementLocated(by));
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		if(driver.findElements(by).size()>1) {
+			jse.executeScript("arguments[0].scrollIntoView()", driver.findElements(by).get(0));
+			jse.executeScript("arguments[0].click()", driver.findElements(by).get(0));
+		}else{
+			jse.executeScript("arguments[0].scrollIntoView()", driver.findElement(by));
+			jse.executeScript("arguments[0].click()", driver.findElement(by));
 		}
 	}
 

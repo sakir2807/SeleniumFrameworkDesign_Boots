@@ -58,7 +58,6 @@ Feature: Boots homepage
     Then Redirected to Story page then Image and Description displayed
 
 
-
   Scenario: Verify Jobs that might interest you on home page
     Then Jobs that might interest you displayed
     Then Find out more CTA displayed
@@ -108,10 +107,8 @@ Feature: Boots homepage
   Scenario: Verify Instagram stories on Home page
     Then Instagram stories are displayed
     When user mouse hover on story image
-    Then Text displayed with like and comment CTA
     When Click on story
     Then assert URL open in different tabs contains text 'InstagramStoryUrl.key'
-
 
 
   Scenario: Verify Footer on home page

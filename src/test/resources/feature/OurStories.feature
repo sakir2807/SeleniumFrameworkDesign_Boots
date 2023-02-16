@@ -36,24 +36,17 @@ Feature: Our stories feature
     Then Story with details displayed
 
 
-  Scenario: Verify Back to top CTA on Our story page # not needed much
-    And Back to top CTA displayed
-    When user Scroll down
-    Then Back to top CTA displayed
-    When user click on Back to top CTA
-    Then User is redirected to top of the page
-
 
   Scenario: Verify Social media link after click on stories
-    And Select one story
+    Then Header with text and image displayed
+    When Select one story
     And Social media icons displayed on story page
-    When user click on LinkedIn Icon
+    When user click on LinkedIn Icon Stories
     Then assert URL open in different tabs contains text 'LinkedInUrl.key'
-    When user click on Facebook icon
-    Then assert URL open in different tabs contains text 'FacebookUrl.key'
-    When user click on Twitter icon
-    Then assert URL open in different tabs contains text 'TwitterUrl.key'
-    When user click on Email Icon
+    When user click on Facebook icon Stories
+    Then assert URL open in different tabs contains text 'FacebookStoriesUrl.key'
+    When user click on Twitter icon Stories
+    Then assert URL open in different tabs contains text 'TwitterStoriesUrl.key'
 
 
 

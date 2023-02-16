@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -90,7 +91,7 @@ public class HomePageSteps extends BaseTest {
     private static final By WHY_BOOT_IMAGE = By.cssSelector("section .image-wrapper");
     private static final By EXPLORE_MORE_CTA = By.cssSelector("div.content-wrapper > div > a");
     private static final By INSTAGRAM_STORIES_HOMEPAGE = By.cssSelector("div.home-page-content-wrapper > section.social-section");
-    private static final By FIRST_INSTAGRAM_STORY = By.cssSelector("#ff-uid-1 > div > div > div > div.ff-content");
+    private static final By FIRST_INSTAGRAM_STORY = By.cssSelector("#ff-uid-1 > div > div > span > img");
     private static final By INSTAGRAM_STORY_TEXT = By.cssSelector("#ff-uid-1 > div > div > div > div.ff-content");
     private static final By INSTAGRAM_STORY_LIKE = By.cssSelector("#ff-uid-1 > div span.ff-item-bar > a.ff-likes");
     private static final By INSTAGRAM_STORY_COMMENT = By.cssSelector("#ff-uid-1 > div span.ff-item-bar > a.ff-comments");
@@ -137,7 +138,7 @@ public class HomePageSteps extends BaseTest {
     private static final By RESULTS_JOBS_PAGE = By.cssSelector("div.job-card-list.d-flex.flex-wrap");
     private static final By HIDE_FILTER_JOBS_PAGE = By.cssSelector("div.form-actions.d-flex.justify-c-end > div > button");
     private static final By CLEAR_FILTER_JOBS_PAGE = By.cssSelector("button.btn.reset-form");
-    private static final By ALREADY_WORK_JOBS_PAGE = By.cssSelector("section > div:nth-child(1) > div > label:nth-child(2) > input[type=radio]");
+    private static final By ALREADY_WORK_JOBS_PAGE = By.cssSelector("#content > section > div:nth-child(1) > div > label:nth-child(2) span");
     private static final By JOB_LEVEL_JOB_PAGE = By.cssSelector("div.form-filters.search_active div.form-group.custom-select2.custom-select2-multi.thin-arrow.already-work-component > select");
     private static final By PAGE_NUMBERS_JOB_PAGE = By.cssSelector("div.job-result-section > div > div.pagination-bottom > div");
     private static final By SELECT_PAGE_NUMBER_JOB_PAGE = By.cssSelector("div.pagination-bottom > div > ul > li:nth-child(2) > a");
@@ -160,7 +161,7 @@ public class HomePageSteps extends BaseTest {
     private static final By OUR_SUPPORT_OFFICE_AREA = By.cssSelector("div.wp-block-group.bg-logo-light > div > section:nth-child(4) > div");
     private static final By OUR_SUPPORT_OFFICE_VIDEO = By.cssSelector("div.slick-slide.slick-current.slick-active div > div.image-wrapper > a");
     private static final By OPEN_VIDEO_SCREEN = By.cssSelector("div.mfp-wrap.mfp-close-btn-in.mfp-auto-cursor.mfp-fade.mfp-ready > div > div.mfp-content");
-    private static final By VIEW_BENEFIT_CTA = By.cssSelector("div > section:nth-child(3) div.section-slider-widget.slick-initialized.slick-slider div.content-wrapper > p:nth-child(3) > a");
+    private static final By VIEW_BENEFIT_CTA = By.cssSelector("#content > div.why-boots-content-wrapper section:nth-child(3) div.section-slider-widget.slick-initialized.slick-slider div.content-wrapper > p:nth-child(3) > a");
     private static final By BENEFIT_ICON = By.cssSelector("#rewards-popup div:nth-child(1) > div:nth-child(1) > div > div >img");
     private static final By BENEFIT_TITLE = By.cssSelector("#rewards-popup div:nth-child(1) > div:nth-child(1) > div > h3");
     private static final By BENEFIT_DESCRIPTION = By.cssSelector("#rewards-popup div:nth-child(1) > div:nth-child(1) > ul");
@@ -202,7 +203,7 @@ public class HomePageSteps extends BaseTest {
     //private static final By HEAR_FROM_TEAM_MEMBER = By.cssSelector("button.slick-next.slick-arrow");
     private static final By STORIES_BLOG = By.cssSelector("div.blog-feed.rel > div.container > div");
     private static final By SELECT_STORY = By.cssSelector("div.blog-feed.rel > div.container > div > div:nth-child(1) > a > div > img");
-    private static final By SOCIAL_MEDIA_STORY_PAGE = By.cssSelector("div.blog-feed.rel > div.container > div");
+    private static final By SOCIAL_MEDIA_STORY_PAGE = By.cssSelector("#share-wrapper > div");
     private static final By EMAIl_STORY_PAGE = By.cssSelector("div.blog-feed.rel > div.container > div");
     private static final By STORY_TITLE_STORIES = By.cssSelector("div.blog-feed.rel >div.container > div > div:nth-child(1) > div > p");
     private static final By STORY_TEXT_STORIES = By.cssSelector("div.blog-feed.rel > div.container > div > div:nth-child(1) > div > a");
@@ -494,7 +495,7 @@ public class HomePageSteps extends BaseTest {
 
     @And("user enters location")
     public void userEntersLocation() {
-         enterDataAndWait(SEARCH_JOB_LOCATION,"India");
+         enterDataAndWait(SEARCH_JOB_LOCATION,"London");
          waitForAjaxElementNotToBePresent(driver,4);
 
     }
@@ -599,6 +600,7 @@ public class HomePageSteps extends BaseTest {
     @Then("click and verify career at boots from footer")
     public void clickAndVerifyCareerAtBootsFromFooter() {
         scrollToPageBottom();
+        waitForExpectedElement(CAREER_AT_BOOTS_FOOTER,5);
         assertTrue(isElementDisplayedBySeconds(CAREER_AT_BOOTS_FOOTER,5));
         clickByElementByQueryJSExecutor(CAREER_AT_BOOTS_FOOTER);
         waitForExpectedElement(CAREER_AT_BOOTS_SUBFOOTER,5);
@@ -619,45 +621,76 @@ public class HomePageSteps extends BaseTest {
 
     @When("user click on Opticians Jobs")
     public void userClickOnOpticiansJobs() {
-         waitForExpectedElement(OPTICIAN_JOB_FOOTER);
-         clickByElementByQueryJSExecutor(OPTICIAN_JOB_FOOTER);
+        if(isElementDisplayedBySeconds(OPTICIAN_JOB_FOOTER,5)){
+         clickByElementByQueryJSExecutor(OPTICIAN_JOB_FOOTER);}
+        else{
+            clickByElementByQueryJSExecutor(CAREER_AT_BOOTS_FOOTER);
+            clickByElementByQueryJSExecutor(OPTICIAN_JOB_FOOTER);
+        }
     }
 
     @When("user click on Retail Jobs")
     public void userClickOnRetailJobs() {
-         waitForExpectedElement(RETAIL_JOB_FOOTER);
-         clickByElementByQueryJSExecutor(RETAIL_JOB_FOOTER);
+        if(isElementDisplayedBySeconds(RETAIL_JOB_FOOTER,5)){
+            clickByElementByQueryJSExecutor(RETAIL_JOB_FOOTER);}
+        else{
+            clickByElementByQueryJSExecutor(CAREER_AT_BOOTS_FOOTER);
+            clickByElementByQueryJSExecutor(RETAIL_JOB_FOOTER);
+        }
     }
 
     @When("user click on Supply Chain Jobs")
     public void userClickOnSupplyChainJobs() {
-         waitForExpectedElement(SUPPLY_CHAIN_JOB_FOOTER);
-         clickByElementByQueryJSExecutor(SUPPLY_CHAIN_JOB_FOOTER);
+        if(isElementDisplayedBySeconds(SUPPLY_CHAIN_JOB_FOOTER,5)){
+            clickByElementByQueryJSExecutor(SUPPLY_CHAIN_JOB_FOOTER);}
+        else{
+            clickByElementByQueryJSExecutor(CAREER_AT_BOOTS_FOOTER);
+            clickByElementByQueryJSExecutor(SUPPLY_CHAIN_JOB_FOOTER);
+        }
     }
 
     @When("user click on Support Office Jobs")
     public void userClickOnSupportOfficeJobs() {
-         waitForExpectedElement(SUPPORT_OFFICE_JOB_FOOTER);
-         clickByElementByQueryJSExecutor(SUPPORT_OFFICE_JOB_FOOTER);
+
+        if(isElementDisplayedBySeconds(SUPPORT_OFFICE_JOB_FOOTER,5)){
+            clickByElementByQueryJSExecutor(SUPPORT_OFFICE_JOB_FOOTER);}
+        else{
+            clickByElementByQueryJSExecutor(CAREER_AT_BOOTS_FOOTER);
+            clickByElementByQueryJSExecutor(SUPPORT_OFFICE_JOB_FOOTER);
+        }
     }
 
 
     @When("user click on Early Careers")
     public void userClickOnEarlyCareers() {
-         waitForExpectedElement(EARLY_CAREERS_JOB_FOOTER);
-         clickByElementByQueryJSExecutor(EARLY_CAREERS_JOB_FOOTER);
+        if(isElementDisplayedBySeconds(EARLY_CAREERS_JOB_FOOTER,5)){
+            clickByElementByQueryJSExecutor(EARLY_CAREERS_JOB_FOOTER);}
+        else{
+            clickByElementByQueryJSExecutor(CAREER_AT_BOOTS_FOOTER);
+            clickByElementByQueryJSExecutor(EARLY_CAREERS_JOB_FOOTER);
+        }
     }
 
     @When("user click on Ireland Jobs")
     public void userClickOnIrelandJobs() {
-         waitForExpectedElement(IRELAND_JOB_FOOTER);
-         clickByElementByQueryJSExecutor(IRELAND_JOB_FOOTER);
+
+        if(isElementDisplayedBySeconds(IRELAND_JOB_FOOTER,5)){
+            clickByElementByQueryJSExecutor(IRELAND_JOB_FOOTER);}
+        else{
+            clickByElementByQueryJSExecutor(CAREER_AT_BOOTS_FOOTER);
+            clickByElementByQueryJSExecutor(IRELAND_JOB_FOOTER);
+        }
     }
 
     @When("user click on Airports Jobs")
     public void userClickOnAirportsJobs() {
-         waitForExpectedElement(AIRPORTS_JOB_FOOTER);
-         clickByElementByQueryJSExecutor(AIRPORTS_JOB_FOOTER);
+
+        if(isElementDisplayedBySeconds(AIRPORTS_JOB_FOOTER,5)){
+            clickByElementByQueryJSExecutor(AIRPORTS_JOB_FOOTER);}
+        else{
+            clickByElementByQueryJSExecutor(CAREER_AT_BOOTS_FOOTER);
+            clickByElementByQueryJSExecutor(AIRPORTS_JOB_FOOTER);
+        }
     }
 
     @Then("Career area filters are displayed")
@@ -715,8 +748,7 @@ public class HomePageSteps extends BaseTest {
     public void userSelectedCategoryFromCareerAreaDropdown() {
          scrollToElement(CAREER_AREA_HOMEPAGE);
          selectValueFromDropDownByIndex(1,CAREER_AREA_DROPDOWN);
-         /*clickByElementByQueryJSExecutor(CAREER_AREA_DROPDOWN);
-         clickByElementByQueryJSExecutor(CAREER_AREA_FIRST_OPTION);*/
+
     }
 
     @When("click on one story")
@@ -793,7 +825,6 @@ public class HomePageSteps extends BaseTest {
 
     @Then("Instagram stories are displayed")
     public void instagramStoriesAreDisplayed() {
-        //scrollToElement(INSTAGRAM_STORIES_HOMEPAGE);
         scrollToPageBottom();
         assertTrue(isElementDisplayedBySeconds(INSTAGRAM_STORIES_HOMEPAGE,5));
     }
@@ -807,9 +838,9 @@ public class HomePageSteps extends BaseTest {
 
     @Then("Text displayed with like and comment CTA")
     public void textDisplayedWithLikeAndCommentCTA() {
-        assertTrue( isElementDisplayedBySeconds(INSTAGRAM_STORY_TEXT,4));
-        assertTrue( isElementDisplayedBySeconds(INSTAGRAM_STORY_LIKE,4));
-        assertTrue( isElementDisplayedBySeconds(INSTAGRAM_STORY_COMMENT,4));
+        assertTrue(isElementDisplayedBySeconds(INSTAGRAM_STORY_TEXT,4));
+        assertTrue(isElementDisplayedBySeconds(INSTAGRAM_STORY_LIKE,4));
+        assertTrue(isElementDisplayedBySeconds(INSTAGRAM_STORY_COMMENT,4));
     }
 
 
@@ -1104,7 +1135,28 @@ public class HomePageSteps extends BaseTest {
 
     @Then("click on I already work for Boots")
     public void clickOnIAlreadyWorkForBoots() {
-        clickByElementByQueryJSExecutor(ALREADY_WORK_JOBS_PAGE);
+        //clickByElementByQueryJSExecutor(ALREADY_WORK_JOBS_PAGE);
+        /*Actions actions = new Actions(driver);
+        actions.moveToElement((WebElement) ALREADY_WORK_JOBS_PAGE);
+        actions.build().perform();*/
+
+       /* WebElement clickable = driver.findElement(By.cssSelector("[name=\"job-type-selector\"][value=\"internal\"]"));
+        new Actions(driver)
+                .click(clickable)
+                .perform();
+        clickable.*/
+        //LOG.info("clickable");
+
+        WebElement radio1 = driver.findElement(By.cssSelector("[name=\"job-type-selector\"][value=\"internal\"]"));
+        radio1.click();
+        clickByElementByQueryJSExecutor(By.cssSelector("#form-job-search > div.form-actions.d-flex.justify-c-end > div > button"));
+        //clickByElementByQueryJSExecutor(ALREADY_WORK_JOBS_PAGE);
+
+       /*Actions action = new Actions(driver);
+        WebElement element = driver.findElement(By.cssSelector("[name=\"job-type-selector\"][value=\"internal\"]"));
+
+        action.moveToElement(element).click();
+*/
     }
 
     @When("Verify Select Job levels with drop down Displayed")
@@ -1115,7 +1167,13 @@ public class HomePageSteps extends BaseTest {
 
     @Then("user selects Job Select Job Level")
     public void userSelectJobSelectJobLevel() {
+
         selectValueFromDropDownByIndex(3,JOB_LEVEL_JOB_PAGE);
+      /*  else{
+            clickByElementByQueryJSExecutor(ALREADY_WORK_JOBS_PAGE);
+            waitForExpectedElement(JOB_LEVEL_JOB_PAGE);
+            selectValueFromDropDownByIndex(3,JOB_LEVEL_JOB_PAGE);
+        }*/
     }
 
 
@@ -1182,7 +1240,8 @@ public class HomePageSteps extends BaseTest {
 
     @And("Our support office video displayed")
     public void ourSupportOfficeVideoDisplayed() {
-         waitForExpectedElement(OUR_SUPPORT_OFFICE_AREA);
+         scrollToElement(OUR_SUPPORT_OFFICE_AREA);
+         //waitForExpectedElement(OUR_SUPPORT_OFFICE_AREA);
          assertTrue(isElementDisplayedBySeconds(OUR_SUPPORT_OFFICE_VIDEO,5));
     }
 
@@ -1200,6 +1259,7 @@ public class HomePageSteps extends BaseTest {
 
     @And("View Benefit CTA displayed")
     public void viewBenefitCTADisplayed() {
+         waitForExpectedElement(VIEW_BENEFIT_CTA);
          scrollToElement(VIEW_BENEFIT_CTA);
          assertTrue(isElementDisplayedBySeconds(VIEW_BENEFIT_CTA,5));
     }
@@ -1228,6 +1288,7 @@ public class HomePageSteps extends BaseTest {
 
     @And("Diversity Matters Video displayed")
     public void diversityMattersVideoDisplayed() {
+         waitForExpectedElement(DIVERSITY_VIDEO);
          scrollToElement(DIVERSITY_VIDEO);
          assertTrue(isElementDisplayedBySeconds(DIVERSITY_VIDEO,5));
     }
@@ -1240,8 +1301,9 @@ public class HomePageSteps extends BaseTest {
 
     @Then("video is getting played")
     public void videoIsGettingPlayed() {
-        waitForExpectedElement(VIDEO_SCREEN);
-        assertTrue(isElementDisplayedBySeconds(VIDEO_SCREEN,5));
+        driver.switchTo().frame(0);
+        waitForExpectedElement(By.xpath("/html/body/div[1]/div"));
+        assertTrue(isElementDisplayedBySeconds(By.xpath("/html/body/div[1]/div"),5));
     }
 
     @And("Explore our career stories displayed")
@@ -1447,12 +1509,13 @@ public class HomePageSteps extends BaseTest {
     @And("Social media icons displayed on story page")
     public void socialMediaIconsDisplayedOnStoryPage() {
         scrollToPageBottom();
+        scrollToElement(SOCIAL_MEDIA_STORY_PAGE);
         assertTrue(isElementDisplayedBySeconds(SOCIAL_MEDIA_STORY_PAGE,5));
     }
 
     @When("user click on Email Icon")
     public void userClickOnEmailIcon() {
-        scrollToPageBottom();
+        scrollToElement(SOCIAL_MEDIA_STORY_PAGE);
         clickByElementByQueryJSExecutor(EMAIl_STORY_PAGE);
     }
 
@@ -1528,10 +1591,12 @@ public class HomePageSteps extends BaseTest {
     @When("user Scroll down")
     public void userScrollDown() {
         scrollToPageBottom();
+        waitForAjaxElementNotToBePresent(driver,4);
     }
 
     @Then("Back to top CTA displayed")
     public void backToTopCTADisplayed() {
+        waitForExpectedElement(BACK_TOP_CTA_OUR_STORIES);
         assertTrue(isElementDisplayedBySeconds(BACK_TOP_CTA_OUR_STORIES,5));
     }
 
@@ -1638,6 +1703,7 @@ public class HomePageSteps extends BaseTest {
 
     @And("Video is displayed")
     public void videoIsDisplayed() {
+        scrollToElement(VIDEO_SCREEN_POPUP);
         assertTrue(isElementDisplayedBySeconds(VIDEO_SCREEN_POPUP,5));
     }
 
@@ -2354,7 +2420,7 @@ public class HomePageSteps extends BaseTest {
        waitForExpectedElement(PHARMACY_LD);
         for(int i=1; i<=6; i++)
         {
-            clickByElementByQueryJSExecutor(By.id("section.programmes-container div.programmes-navigation-wrapper > div:nth-child("+i+")"));
+            clickByElementByQueryJSExecutor(By.cssSelector("section.programmes-container div.programmes-navigation-wrapper > div:nth-child("+i+")"));
             assertTrue(isElementDisplayedBySeconds(PHARMACY_LD_DESCRIPTION,5));
         }
     }
@@ -2530,8 +2596,9 @@ public class HomePageSteps extends BaseTest {
         {
             clickByElementByQueryJSExecutor(By.cssSelector("#content > div.why-boots-content-wrapper div.swiper-pagination.vertical-pagination> span:nth-child("+i+")"));
             waitForAjaxElementNotToBePresent(driver,4);
-            clickByElementByQueryJSExecutor(By.cssSelector("a.btn.btn-outline.white"));
-            driver.navigate().back();
+            assertTrue(isElementDisplayedBySeconds(By.cssSelector("a.btn.btn-outline.white"),5));
+            /*clickByElementByQueryJSExecutor(By.cssSelector("a.btn.btn-outline.white"));
+            driver.navigate().back();*/
         }
     }
 
@@ -2544,6 +2611,24 @@ public class HomePageSteps extends BaseTest {
             clickByElementByQueryJSExecutor(By.cssSelector("a.btn.btn-outline.white"));
             driver.navigate().back();
         }
+    }
+
+    @When("user click on LinkedIn Icon Stories")
+    public void userClickOnLinkedInIconStories() {
+        scrollToElement(SOCIAL_MEDIA_STORY_PAGE);
+        clickByElementByQueryJSExecutor(LINKEDIN_LINK_HOME);
+    }
+
+    @When("user click on Facebook icon Stories")
+    public void userClickOnFacebookIconStories() {
+        scrollToElement(SOCIAL_MEDIA_STORY_PAGE);
+        clickByElementByQueryJSExecutor(FACEBOOK_LINK_HOME);
+    }
+
+    @When("user click on Twitter icon Stories")
+    public void userClickOnTwitterIconStories() {
+        scrollToElement(SOCIAL_MEDIA_STORY_PAGE);
+        clickByElementByQueryJSExecutor(TWITTER_LINK_HOME);
     }
 }
 

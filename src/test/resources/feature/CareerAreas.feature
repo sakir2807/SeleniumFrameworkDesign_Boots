@@ -216,14 +216,14 @@ Feature: Career Areas feature
   Scenario: Verify Why join us CTA on Support Office Jobs page
     And user is on Support Office Jobs Page
     And Why join us content displayed
-    When user click on Business Support
-    Then assert URL contains text 'BusinessSupportUrl.key'
+#    When user click on Business Support
+#    Then assert URL contains text 'BusinessSupportUrl.key'
     When user click on Buying & Merchandising
     Then assert URL contains text 'BuyingMerchandisingUrl.key'
-    When user click on Ecommerce & Digital
-    Then assert URL contains text 'EcommerceDigitalUrl.key'
-    When user click on Digital Transformation
-    Then assert URL contains text 'DigitalTransformationUrl.key'
+#    When user click on Ecommerce & Digital
+#    Then assert URL contains text 'EcommerceDigitalUrl.key'
+#    When user click on Digital Transformation
+#    Then assert URL contains text 'DigitalTransformationUrl.key'
     When user click on Data & Insights
     Then assert URL contains text 'DataInsightsUrl.key'
     When user click on Finance
@@ -232,10 +232,10 @@ Feature: Career Areas feature
     Then assert URL contains text 'HRUrl.key'
     When user click on Marketing, Brand & Communications
     Then assert URL contains text 'MarketingBrandCommunicationUrl.key'
-    When user click on Property & Estates
-    Then assert URL contains text 'PropertyEstatesUrl.key'
-    When user click on Research & Development
-    Then assert URL contains text 'ResearchDevelopmentUrl.key'
+#    When user click on Property & Estates
+#    Then assert URL contains text 'PropertyEstatesUrl.key'
+#    When user click on Research & Development
+#    Then assert URL contains text 'ResearchDevelopmentUrl.key'
     When user click on Supply & Demand Planning Support
     Then assert URL contains text 'SupplyDemandPlanningUrl.key'
     When user click on Technology

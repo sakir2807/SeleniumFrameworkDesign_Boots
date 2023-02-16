@@ -13,7 +13,7 @@ Feature: Boots Search Job
     Then enter town, city or postcode option now select distance is clickable
 
 
-    Scenario: Verify Search Job with All parameters added
+    Scenario: Verify Search Job with All parameters added //1
     And Search jobs filters are displayed
     When user enters Job Keyword
     And user enters Job Town
@@ -51,7 +51,6 @@ Feature: Boots Search Job
     Then Result with no filter display
 
 
-
   Scenario: Verify Clear filter on Search Job
     And  Search jobs filters are displayed
     And Clear Filter is displayed
@@ -64,15 +63,15 @@ Feature: Boots Search Job
     Then Result with no filter display
 
 
-  Scenario: Verify additional parameters When selected I already worked for boots
+  Scenario: Verify additional parameters When selected I already worked for boots //2
     And  Search jobs filters are displayed
     Then click on I already work for Boots
     When Verify Select Job levels with drop down Displayed
     Then user selects Job Select Job Level
 
 
-  Scenario: Verify Search Job with selected parameters added
-    And  Search jobs filters are displayed
+  Scenario: Verify Search Job with selected parameters added //3
+    And Search jobs filters are displayed
     Then click on I already work for Boots
     When user enters Job Keyword
     And user enters Job Town
