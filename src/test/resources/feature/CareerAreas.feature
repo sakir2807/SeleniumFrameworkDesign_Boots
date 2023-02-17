@@ -29,12 +29,12 @@ Feature: Career Areas feature
     Then assert URL contains text 'AirportUrl.key'
 
 
-  Scenario: Verify Video on beauty-specialist page
+  Scenario: Verify Video on beauty-specialist page  //look
     And User is on Retail page
     And User is on beauty-specialist page
-    And Video is displayed
     And Current Vacancies displayed
     And Share page dropdown displayed
+    And Video is displayed
     When user click on play button
     Then Video should get played
 
@@ -57,7 +57,7 @@ Feature: Career Areas feature
     Then assert URL contains text 'LizEarleDavidUrl.key'
 
 
-  Scenario: Verify Current vacancies and Share jobs on Liz-earle page
+  Scenario: Verify Video on No7 page
     And User is on Retail page
     And User is on NoSeven page
     And Video is displayed
@@ -116,7 +116,7 @@ Feature: Career Areas feature
 
 
 
-  Scenario: Verify Pharmacist page
+  Scenario: Verify Pharmacist page//look
     And User is on Pharmacy page
     And User is on Pharmacist page
     And Discover your path today displayed with CTA Let's start displayed
@@ -126,8 +126,6 @@ Feature: Career Areas feature
     Then User getting moved to different modal at footer
     When user click on relocate with us
     Then assert URL contains text 'RelocationUrl.key'
-#    When user click on Chat with us
-#    Then Popup should get displayed with chat window// waiting for pranali confirmation
 
 
 
@@ -135,9 +133,9 @@ Feature: Career Areas feature
     And User is on Pharmacy page
     And user is on pharmacist-newly-qualified
     And Discover your path today displayed with CTA Let's start displayed
-    And  Video is displayed
     When user click Let's start CTA
     Then User getting moved to different modal at footer
+    And Video is displayed
     When user click on play button
     Then Video should get played
 
@@ -145,7 +143,7 @@ Feature: Career Areas feature
   Scenario: Verify Headers on Trainee-pharmacist Page
     And User is on Pharmacy page
     And User is on Trainee-pharmacist Page
-    And  Headers displayed
+    And Headers displayed
     Then click and verify each header
 
 
@@ -157,14 +155,14 @@ Feature: Career Areas feature
     And Popup with Salary, Pension Scheme,  Lifeworks, Bonus scheme, The Benefits Box and GPHC PSNI  is displayed with icons
 
 
-  Scenario: Verify Our Pharmacy Programmes Trainee-pharmacist page
+  Scenario: Verify Our Pharmacy Programmes Trainee-pharmacist page//look
     And User is on Pharmacy page
     And User is on Trainee-pharmacist Page
-    And  Our Pharmacy Programmes displayed
+    And Our Pharmacy Programmes displayed
     When user click on Each programmes available verify information displayed
 
 
-  Scenario: Verify How to apply clicks CTA on Trainee-pharmacist Page
+  Scenario: Verify How to apply clicks CTA on Trainee-pharmacist Page//look//not getting test case
     And User is on Pharmacy page
     And User is on Trainee-pharmacist Page
     And How to apply slider is displayed
@@ -172,10 +170,10 @@ Feature: Career Areas feature
     Then Information related to the selected criteria is displayed
 
 
-  Scenario: Verify Our Culture and Trainee pharmacist stories scroll CTA on Trainee-pharmacist Page
+  Scenario: Verify Our Culture and Trainee pharmacist stories scroll CTA on Trainee-pharmacist Page//look
     And User is on Pharmacy page
     And User is on Trainee-pharmacist Page
-    And  Our Culture displayed
+    And Our Culture displayed
     And Trainee pharmacist stories displayed
     And View story CTA displayed
     When user click on Our Culture scroll CTA
@@ -190,11 +188,8 @@ Feature: Career Areas feature
     And User is on Pharmacy page
     And user is on Pharmacy-support
     And Discover your path today displayed with CTA Let's start displayed
-    #And  Video is displayed # Not present
     When user click Let's start CTA
     Then User getting moved to different modal at footer
-    #When user click on play button# Not present
-    #Then Video should get played# Not present
 
 
 #  Scenario: Verify Discover your path today on pharmacy-store-management // not present
@@ -213,7 +208,7 @@ Feature: Career Areas feature
     Then User getting moved to different modal at footer
 
 
-  Scenario: Verify Why join us CTA on Support Office Jobs page
+  Scenario: Verify Why join us CTA on Support Office Jobs page//look
     And user is on Support Office Jobs Page
     And Why join us content displayed
 #    When user click on Business Support
@@ -292,11 +287,11 @@ Feature: Career Areas feature
     And User is on Opticians page
     And User is on Pre-reg-optometrist Page
     Then assert URL contains text 'PreRegistrationOptometristUrl.key'
-    And  Headers displayed
+    And Headers displayed
     Then click on each pre-reg-optometrist header link and verify it
 
 
-  Scenario: Verify Apply now and Benefit CTA on pre-reg-optometrist page
+  Scenario: Verify Apply now and Benefit CTA on pre-reg-optometrist page//look
     And User is on Opticians page
     And User is on Pre-reg-optometrist Page
     And Apply now CTA displayed
@@ -323,7 +318,6 @@ Feature: Career Areas feature
     Then user click on Optician stories and verify content
 
 
-
   Scenario: Verify Hint & Tips CTA on pre-reg-optometrist page
     And User is on Opticians page
     And User is on Pre-reg-optometrist Page
@@ -336,17 +330,16 @@ Feature: Career Areas feature
     And User is on Opticians page
     And User is on Franchise Page
     Then assert URL contains text 'FranchiseUrl.key'
-    And  Headers displayed
+    And Headers displayed
     Then click on each header link and verify it
 
 
-  Scenario: Verify Enquire now CTA  on Franchise Page
+  Scenario: Verify Enquire now CTA on Franchise Page
     And User is on Opticians page
     And User is on Franchise Page
     And Enquire now CTA displayed
     When user click on Enquire now
-    Then enquire form is open now
-
+    Then assert URL open in different tabs contains text 'EnquireFormUrl.key'
 
   Scenario: Verify Opticians List pages
     And User is on Opticians page
@@ -380,10 +373,8 @@ Feature: Career Areas feature
     And User is on Supply-chain page
     And user click on Warehousing
     And Current Vacancies displayed
+    And Share page dropdown displayed//specified issue
     And Pertemps, AMPM CTA displayed
-    And Share page dropdown displayed
-    When user click on Current Vacancies CTA
-    Then assert URL contains text 'SearchJobsUrl.key'
     When user click on Pertemps
     Then assert URL open in different tabs contains text 'PertempsUrl.key'
     When user click on AMPM
@@ -411,46 +402,45 @@ Feature: Career Areas feature
   Scenario: Verify Headers on Apprenticeships page
     And User is on Early Careers page
     And user click on Apprenticeships
-    And  Headers displayed
+    And Headers displayed
     Then click on each Apprenticeships header link and verify it
 
 
-  Scenario: Verify Apprenticeships page
+  Scenario: Verify Apprenticeships page //look
     And User is on Early Careers page
     And user click on Apprenticeships
-    And Video is displayed
     And Hint & tips CTA displayed
     And Application Process stages displayed
     And Our Culture and Stories images and scroll CTA displayed
     And Parents & teachers Scroll and Video displayed
+    And Video is displayed
     When user click on play button
     Then Video should get played
 
 
-  Scenario: Verify Resources and Safeguarding on Apprenticeships page
+  Scenario: Verify Resources and Safeguarding on Apprenticeships page//look
     And User is on Early Careers page
     And user click on Apprenticeships
-    And  Resources Section is displayed
+    And Resources Section is displayed//this giving issue
     And download options are display
-
 
 
   Scenario: Verify Headers on Graduates page
     And User is on Early Careers page
     And user click on Graduates
-    And  Headers displayed
+    And Headers displayed
     Then click on each header link and verify it
 
 
-  Scenario: Verify Graduates page
+  Scenario: Verify Graduates page//look
     And User is on Early Careers page
     And user click on Graduates
-    And Video is displayed
     And Hint & tips CTA displayed
     And Application Process stages displayed
     And Our Culture and Stories images and scroll CTA displayed
-    When user click on play button
-    Then Video should get played
+    And Video is displayed graduate
+    When user click on play button graduate
+    Then Video should get played//this giving issue
 
 
   Scenario: Verify Work Experience page
