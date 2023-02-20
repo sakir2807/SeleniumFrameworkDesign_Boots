@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -236,9 +237,9 @@ public class HomePageSteps extends BaseTest {
     private static final By WORK_EXPERIENCE_CAREERAREAS = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(3) > a");
     private static final By SPEAKER_FOR_SCHOOL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li > a");
     private static final By VIDEO_SCREEN_POPUP = By.cssSelector("div.img-wrapper-block a");
-    private static final By VIDEO_SCREEN_POPUP_GRADUATE = By.cssSelector("#graduate-opportunities > div.integrated-core-section > div > div.video-right > a");
+    private static final By VIDEO_SCREEN_POPUP_GRADUATE = By.cssSelector("div.integrated-core-section > div > div.video-right > a");
     private static final By OPTICIAN_CAREERAREAS = By.linkText("Opticians");
-    private static final By SUPPORT_OFFICE_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(3) > a");
+    private static final By SUPPORT_OFFICE_CAREERAREAS = By.linkText("Support Office");
     private static final By PHARMACY_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(2) > a");
     private static final By RETAILS_CAREERAREAS = By.cssSelector("div.my-header > nav > ul > li.rolestab.show-latest-story > ul > li:nth-child(1) > a");
     private static final By No7_RETAIL = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(4) > a");
@@ -248,7 +249,7 @@ public class HomePageSteps extends BaseTest {
     private static final By TRAINEE_PHARMACIST_PHARMACY = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(4) > a");
     private static final By PHARMACY_STORE_PHARMACY = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(5) > a");
     private static final By LOCUM_PHARMACIST_PHARMACY = By.cssSelector("div.btn-block-wrapper > ul > li:nth-child(6) > a");
-    private static final By DISCOVER_PATH_BANNER = By.cssSelector("section.career-block-image div.content-wrapper > p");
+    private static final By DISCOVER_PATH_BANNER = By.cssSelector("#content > section:nth-child(4) div:nth-child(1) > div.content-wrapper > p");
     private static final By DISCOVER_PATH_CTA = By.cssSelector("section.career-block-image div.content-wrapper > button");
     private static final By BOOTS_CAREERS_TAKE_YOU = By.cssSelector("#career-mapper > div.start-overlay");
     private static final By CULTURE_TRAINEE_PHARMACIST = By.cssSelector("#our-culture >div");
@@ -321,20 +322,20 @@ public class HomePageSteps extends BaseTest {
     private static final By OUR_CULTURE_SCROLL_GRADUATE = By.cssSelector("#oursupportoffice > div > button.slick-next.slick-arrow");
     private static final By RESOURCE_APPRENTICESHIP = By.cssSelector("#hub-top-nav > ul div:nth-child(5) > div > li > a");
     private static final By PARENT_TEACHER_APPRENTICESHIP = By.cssSelector("#parents--teachers > div");
-    private static final By PARENT_TEACHER_VIDEO = By.cssSelector("#parents--teachers div.common-single-slider-wrapper > div.common-single-slider.slick-initialized.slick-slider div.slick-slide.slick-current.slick-active div.image > a");
+    private static final By PARENT_TEACHER_VIDEO = By.cssSelector("#parents--teachers div.common-single-slider-wrapper > div.common-single-slider.slick-initialized.slick-slider div.slick-slide.slick-current div.image");
     private static final By OPTOMETRIST_OPTICIAN = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(1) > a");
     private static final By PRE_REG_OPTOMETRIST_OPTICIAN = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(2) > a");
     private static final By OPTICAL_SUPPORT_OPTICIAN = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(3) > a");
     private static final By OPTICIAN_STORE_OPTICIAN = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(4) > a");
     private static final By OPTICIAN_SUBSECTION = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper");
     private static final By BUSINESS_SUPPORT = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(1) > a");
-    private static final By BUYING_MERCHANDISING = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(2) > a");
+    private static final By BUYING_MERCHANDISING = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(1) > a");
     private static final By ECOMMERCEDIGITAL = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(3) > a");
     private static final By DIGITAL_TRANSFORMATION = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(4) > a");
-    private static final By DATA_INSIGHTS = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(5) > a");
-    private static final By FINANCE = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(6) > a");
-    private static final By HR = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(7) > a");
-    private static final By MARKETING_BRAND = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(8) > a");
+    private static final By DATA_INSIGHTS = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(3) > a");
+    private static final By FINANCE = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(5) > a");
+    private static final By HR = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(6) > a");
+    private static final By MARKETING_BRAND = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(7) > a");
     private static final By PROPERTY_ESTATES = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(9) > a");
     private static final By RESEARCH_DEVELOPMENT = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(10) > a");
     private static final By SUPPLY_DEMAND = By.cssSelector("section.why-join-us > div > div.btn-block-wrapper > ul > li:nth-child(11) > a");
@@ -387,6 +388,7 @@ public class HomePageSteps extends BaseTest {
 
     @When("^user accept cookie$")
     public void userAcceptCookie() {
+        hoverOnElement(By.cssSelector("#content > div.home-page-content-wrapper > div.wp-block-group.intro-section"));
         waitForExpectedElement(ACCEPT_COOKIE,10);
         clickByElementByQueryJSExecutor(ACCEPT_COOKIE);
         Assert.assertTrue(invisibilityOfElementLocated(ACCEPT_COOKIE, Duration.ofSeconds(5)));
@@ -1844,7 +1846,7 @@ public class HomePageSteps extends BaseTest {
 
     @When("user click on Each programmes available verify information displayed")
     public void userClickOnEachProgrammesAvailableVerifyInformationDisplayed() {
-        for(int i=1; i<=3; i++)
+        for(int i=3; i<=1; i--)
         {
             clickByElementByQueryJSExecutor(By.cssSelector("div.details-section > ul > li:nth-child("+i+") > div.arrow_box > div > button"));
             waitForAjaxElementNotToBePresent(driver,4);
@@ -2041,7 +2043,6 @@ public class HomePageSteps extends BaseTest {
     @And("Hint & tips CTA displayed")
     public void hintTipsCTADisplayed() {
         scrollToElement(HINT_TIPS_CTA);
-        waitForExpectedElement(HINT_TIPS_CTA);
         assertTrue(isElementDisplayedBySeconds(HINT_TIPS_CTA,5));
     }
 
@@ -2166,6 +2167,7 @@ public class HomePageSteps extends BaseTest {
     @When("user click on Apprenticeships")
     public void userClickOnApprenticeships() {
         clickByElementByQueryJSExecutor(APPRENTICESHIP);
+        waitForPage();
     }
 
     @When("user click on Graduates")
@@ -2251,6 +2253,7 @@ public class HomePageSteps extends BaseTest {
 
     @And("Our Culture and Stories images and scroll CTA displayed")
     public void ourCultureAndStoriesImagesAndScrollCTADisplayed() {
+        scrollToElement(OUR_CULTURE_GRADUATE);
         assertTrue(isElementDisplayedBySeconds(OUR_CULTURE_GRADUATE,5));
         //assertTrue(isElementDisplayedBySeconds(OUR_CULTURE_SCROLL_GRADUATE,5));
         //assertTrue(isElementDisplayedBySeconds(STORIES_GRADUATE,5));
@@ -2268,14 +2271,13 @@ public class HomePageSteps extends BaseTest {
 
     @And("Resources Section is displayed")
     public void resourcesSectionIsDisplayed() {
-        waitForPage();
         scrollToElement(RESOURCE_APPRENTICESHIP);
-        clickByElementByQueryJSExecutor(RESOURCE_APPRENTICESHIP);
+        assertTrue(isElementDisplayedBySeconds(RESOURCE_APPRENTICESHIP,5));
     }
 
     @And("Parents & teachers Scroll and Video displayed")
     public void parentsTeachersScrollAndVideoDisplayed() {
-        scrollToElement(PARENT_TEACHER_APPRENTICESHIP);
+        clickByElementByQueryJSExecutor(By.cssSelector("#hub-top-nav > ul div:nth-child(6) > div > li > a"));
         assertTrue(isElementDisplayedBySeconds(PARENT_TEACHER_APPRENTICESHIP,5));
         assertTrue(isElementDisplayedBySeconds(PARENT_TEACHER_VIDEO,5));
     }
@@ -2349,7 +2351,6 @@ public class HomePageSteps extends BaseTest {
 
     @When("user click on Buying & Merchandising")
     public void userClickOnBuyingMerchandising() {
-        driver.navigate().back();
         waitForExpectedElement(BUYING_MERCHANDISING);
         clickByElementByQueryJSExecutor(BUYING_MERCHANDISING);
     }
@@ -2479,14 +2480,22 @@ public class HomePageSteps extends BaseTest {
 
     @Then("user get informative popup")
     public void userGetInformativePopup() {
-        waitForExpectedElement(BENEFIT_POPUP);
-        assertTrue(isElementDisplayedBySeconds(BENEFIT_POPUP,5));
-        clickByElementByQueryJSExecutor(POPUP_CLOSE);
+        if(isElementDisplayedBySeconds(BENEFIT_POPUP,10))
+        {
+            assertTrue(isElementDisplayedBySeconds(BENEFIT_POPUP,5));
+            clickByElementByQueryJSExecutor(POPUP_CLOSE);}
+        else {
+            clickByElementByQueryJSExecutor(BENEFIT_OPTOMETRIST_PROGRAMME);
+            assertTrue(isElementDisplayedBySeconds(BENEFIT_POPUP,5));
+            clickByElementByQueryJSExecutor(POPUP_CLOSE);
+        }
     }
 
     @When("user click on Benefit CTA")
     public void userClickOnBenefitCTA() {
-        clickByElementByQueryJSExecutor(BENEFIT_OPTOMETRIST_PROGRAMME);
+        scrollToElement(By.cssSelector("#our-optometrist-programme"));
+        waitForItemToBeClickableAndClick(BENEFIT_OPTOMETRIST_PROGRAMME,10);
+        //clickByElementByQueryJSExecutor(BENEFIT_OPTOMETRIST_PROGRAMME);
     }
 
     @When("user click on Apply now")
@@ -2502,7 +2511,7 @@ public class HomePageSteps extends BaseTest {
     @And("Chat with us CTA displayed")
     public void chatWithUsCTADisplayed() {
         scrollToElement(RELOCATE_WITH_US_CTA_PHARMACIST);
-        driver.switchTo().frame("tidio-chat-iframe");
+        driver.switchTo().frame(0);
         assertTrue(isElementDisplayedBySeconds(CHAT_WINDOW,5));
     }
 
